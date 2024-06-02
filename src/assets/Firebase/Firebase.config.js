@@ -1,9 +1,9 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyCV1bLRHlJ7zSnhx_jX7FWRILCQfgAFCVY",
   authDomain: "medtrail-8e6a1.firebaseapp.com",
@@ -13,5 +13,7 @@ const firebaseConfig = {
   appId: "1:432310239119:web:c841f40d93f45d6357d5fa"
 };
 
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+
+ const app = initializeApp(firebaseConfig);
+ export  const auth = getAuth(app)
+
