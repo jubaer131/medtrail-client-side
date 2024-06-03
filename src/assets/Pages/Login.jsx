@@ -7,7 +7,7 @@ import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
 
-    const { googlelogin, loading } = useContext(AuthContext)
+    const { googlelogin, loading, signIn } = useContext(AuthContext)
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const navigate = useNavigate();
 

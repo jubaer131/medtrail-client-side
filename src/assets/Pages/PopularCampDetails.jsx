@@ -6,14 +6,20 @@ import { IoLocationSharp } from "react-icons/io5";
 import { useParams } from "react-router-dom";
 import UseAxiosPublic from "../Hooks/UseAxiosPublic";
 import { FaUserDoctor } from "react-icons/fa6";
+import { useState } from "react";
+import BookingModal from "../Component/BookingModal";
 
 
 const PopularCampDetails = () => {
+    const [gender, setGender] = useState('');
+    const [close, setClose] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(true);
+
     const axiosPublic = UseAxiosPublic()
     const { id } = useParams()
 
-    const { isPending, data: campdetails = [] } = useQuery({
-        queryKey: ['campdetails'],
+    const { isPending, data: campdetails = [], refetch } = useQuery({
+        queryKey: ['campdetails', id],
         queryFn: async () =>
             await axiosPublic('/popularmedicalcamp')
                 .then(res => {
@@ -33,6 +39,17 @@ const PopularCampDetails = () => {
         _id,
         description
     } = campdetails
+
+    // form related task from here 
+
+
+    const handleChange = (e) => {
+
+        setGender(e.target.value);
+    };
+
+
+
 
 
     return (
@@ -77,28 +94,8 @@ const PopularCampDetails = () => {
 
                                 </div>
                                 {/* add modals */}
-                                <div className="mt-6">
-                                    {/* The button to open modal */}
-                                    <label htmlFor="my_modal_6" className="btn">open modal</label>
+                                <BookingModal campdetails={campdetails} refetch={refetch}></BookingModal>
 
-                                    {/* Put this part before </body> tag */}
-                                    <input type="checkbox" id="my_modal_6" className="modal-toggle" />
-                                    <div className="modal" role="dialog">
-                                        <div className="modal-box">
-                                            <h3 className="font-bold text-lg">Hello!</h3>
-                                            {/* start */}
-
-
-
-                                            {/* end*/}
-
-                                            <div className="flex justify-around ">
-                                                <label htmlFor="my_modal_6" className="btn">save</label>
-                                                <label htmlFor="my_modal_6" className="btn">cancel</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

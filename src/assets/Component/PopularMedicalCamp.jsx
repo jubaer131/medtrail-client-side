@@ -9,7 +9,7 @@ const PopularMedicalCamp = () => {
     const axiosPublic = UseAxiosPublic()
     const [visibleCamps, setVisibleCamps] = useState(3);
 
-    const { isPending, data: camps = [] } = useQuery({
+    const { isPending, data: camps = [], } = useQuery({
         queryKey: ['camps'],
         queryFn: async () =>
             await axiosPublic('/popularmedicalcamp')
