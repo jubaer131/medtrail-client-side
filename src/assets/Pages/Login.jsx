@@ -35,13 +35,16 @@ const Login = () => {
         googlelogin()
             .then(result => {
                 console.log(result.user);
-                toast.success('Google Sign-In successful');
-                navigate('/');
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        console.log(res.data);
+                        navigate('/');
+                    })
             })
-            .catch(error => {
-                console.log(error);
-                toast.error(error.message);
-            });
     };
 
 

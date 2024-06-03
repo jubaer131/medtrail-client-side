@@ -6,6 +6,8 @@ import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 import { GoogleAuthProvider } from "firebase/auth/web-extension";
+import Swal from "sweetalert2";
+import UseAxiosPublic from "../Hooks/UseAxiosPublic";
 
 
 
@@ -15,28 +17,60 @@ const Registation = () => {
     const { createUser, updateUserProfile, loading, googlelogin } = useContext(AuthContext)
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const navigate = useNavigate();
+    const axiosPublic = UseAxiosPublic()
 
 
     const onSubmit = data => {
 
+        // createUser(data.email, data.password)
+        //     .then(result => {
+        //         const loggedUser = result.user;
+        //         console.log(loggedUser);
+        //         toast.success('registation successful')
+        //         updateUserProfile(data.name, data.photoURL)
+        //             .then(() => {
+        //                 reset();
+        //                 navigate('/');
+        //                 // create user entry in the database
+
+        //             })
+        //             .catch(error => console.log(error))
+
+        //     })
+        //     .catch(error => {
+        //         console.log(error)
+        //         toast.error(error)
+        //     })
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                toast.success('registation successful')
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        reset();
-                        navigate('/');
                         // create user entry in the database
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log('user added to the database')
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created successfully.',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/');
+                                }
+                            })
+
 
                     })
                     .catch(error => console.log(error))
-
-            })
-            .catch(error => {
-                console.log(error)
-                toast.error(error)
             })
 
     };
@@ -44,16 +78,21 @@ const Registation = () => {
 
     const handleSignIn = () => {
         if (loading) return;  // Prevent multiple Google sign-ins if loading
+
         googlelogin()
             .then(result => {
                 console.log(result.user);
-                toast.success('Google Sign-In successful');
-                navigate('/');
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        console.log(res.data);
+                        navigate('/');
+                    })
             })
-            .catch(error => {
-                console.log(error);
-                toast.error(error.message);
-            });
+
     };
 
 

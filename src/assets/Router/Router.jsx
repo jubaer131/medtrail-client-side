@@ -6,6 +6,9 @@ import Root from "../Layout/Root";
 import Registation from "../Pages/Registation";
 import Login from "../Pages/Login";
 import PopularCampDetails from "../Pages/PopularCampDetails";
+import DashboardLayout from "../Layout/DashboardLayout";
+import OrganizerProfile from "../Dashboard/OrganizerProfile";
+import AddaCamp from "../Dashboard/AddaCamp";
 
 
 const router = createBrowserRouter([
@@ -32,6 +35,22 @@ const router = createBrowserRouter([
 
         ]
     },
+    {
+        path: '/dashboard',
+        element: <DashboardLayout></DashboardLayout>,
+        children: [
+
+            {
+                index: true,
+                element: <OrganizerProfile></OrganizerProfile>
+            },
+            {
+                path: 'addacamp',
+                element: <AddaCamp></AddaCamp>
+            },
+
+        ]
+    }
 ]);
 
 export default router
