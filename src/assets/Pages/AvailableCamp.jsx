@@ -1,8 +1,33 @@
-import React from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useState } from 'react';
+import UseAxiosPublic from '../Hooks/UseAxiosPublic';
+import AvailableCampCard from './AvailableCampCard';
 
 const AvailableCamp = () => {
+    const [search, setsearch] = useState('')
+    const [columns, setColumns] = useState(3);
+    const axiosPublic = UseAxiosPublic()
 
+    const { data: availablecamp = [], isPending, } = useQuery({
+        queryKey: ['availablecamp', search],
+        queryFn: async () =>
+            await axiosPublic(`availablecamp?search=${search}`)
+                .then(res => {
+                    console.log(res.data)
 
+                    return res.data
+                })
+    })
+
+    const handlesearch = e => {
+        e.preventDefault()
+        const text = e.target.search.value
+        setsearch(text)
+
+    }
+    const showTwoColumns = () => {
+        setColumns(2);
+    };
 
     return (
 
@@ -12,7 +37,7 @@ const AvailableCamp = () => {
                 <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
 
 
-                    <form>
+                    <form onSubmit={handlesearch}>
                         <div className='flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
                             <input
                                 className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
@@ -38,12 +63,12 @@ const AvailableCamp = () => {
                             <option value='asc'>Ascending Order</option>
                         </select>
                     </div>
-                    <button className='btn'>Reset</button>
+                    <button onClick={showTwoColumns} className='btn'>Change colum</button>
                 </div>
-                <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-                    {/* {jobs.map(job => (
-              <JobCard key={job._id} job={job} />
-            ))} */}
+                <div className={`grid grid-cols-1 gap-4 md:grid-cols-${columns}`}>
+                    {availablecamp.map(camp => (
+                        <AvailableCampCard key={camp._id} camp={camp} />
+                    ))}
                 </div>
             </div>
 

@@ -33,7 +33,7 @@ const AddaCamp = () => {
         const dateTime = data.dateTime
         const location = data.location
         const healthcareProfessional = data.healthcareProfessional
-        const participantCount = data.participantCount
+        const participantCount = parseInt(data.participantCount)
         const description = data.description
 
         const campdata = {
