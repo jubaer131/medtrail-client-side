@@ -63,7 +63,7 @@ const router = createBrowserRouter([
                 element: <CommonRoute></CommonRoute>
             },
             {
-                index: 'organizerprofile',
+                path: 'organizerprofile',
                 element: <OrganizerProfile></OrganizerProfile>
             },
             {

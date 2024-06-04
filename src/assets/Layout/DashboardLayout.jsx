@@ -53,7 +53,7 @@ const DashboardLayout = () => {
                 <nav>
                     {
                         item.role === 'admin' ? <>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='/organizerprofile'>Organizer Profile</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='organizerprofile'>Organizer Profile</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='addacamp'>Add a camp</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='managecamp'>Manage camp</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='manageregistercamp'>Manage register camp</Link></a>

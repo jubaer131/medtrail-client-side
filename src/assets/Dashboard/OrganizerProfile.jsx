@@ -45,6 +45,10 @@ const OrganizerProfile = () => {
                                     Email
                                     <span className='font-bold text-black '>{user?.email}</span>
                                 </p>
+                                <p className='flex flex-col'>
+                                    Email
+                                    <span className='font-bold text-black '>{user?.phoneNumber}</span>
+                                </p>
 
                                 <div>
                                     <Link to={`/dashboard/updateprofile`}> <button className='bg-[#F43F5E] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
