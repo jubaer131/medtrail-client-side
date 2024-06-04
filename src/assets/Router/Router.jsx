@@ -9,6 +9,7 @@ import PopularCampDetails from "../Pages/PopularCampDetails";
 import DashboardLayout from "../Layout/DashboardLayout";
 import OrganizerProfile from "../Dashboard/OrganizerProfile";
 import AddaCamp from "../Dashboard/AddaCamp";
+import AvailableCamp from "../Pages/AvailableCamp";
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
                 path: '/popularcampdetails/:id',
                 element: <PopularCampDetails></PopularCampDetails>
             },
+            {
+                path: '/availablecamp',
+                element: <AvailableCamp></AvailableCamp>
+            }
 
         ]
     },

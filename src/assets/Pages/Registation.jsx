@@ -22,25 +22,7 @@ const Registation = () => {
 
     const onSubmit = data => {
 
-        // createUser(data.email, data.password)
-        //     .then(result => {
-        //         const loggedUser = result.user;
-        //         console.log(loggedUser);
-        //         toast.success('registation successful')
-        //         updateUserProfile(data.name, data.photoURL)
-        //             .then(() => {
-        //                 reset();
-        //                 navigate('/');
-        //                 // create user entry in the database
 
-        //             })
-        //             .catch(error => console.log(error))
-
-        //     })
-        //     .catch(error => {
-        //         console.log(error)
-        //         toast.error(error)
-        //     })
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
@@ -50,7 +32,8 @@ const Registation = () => {
                         // create user entry in the database
                         const userInfo = {
                             name: data.name,
-                            email: data.email
+                            email: data.email,
+                            role: 'guest',
                         }
                         axiosPublic.post('/users', userInfo)
                             .then(res => {
@@ -84,7 +67,8 @@ const Registation = () => {
                 console.log(result.user);
                 const userInfo = {
                     email: result.user?.email,
-                    name: result.user?.displayName
+                    name: result.user?.displayName,
+                    role: 'guest',
                 }
                 axiosPublic.post('/users', userInfo)
                     .then(res => {

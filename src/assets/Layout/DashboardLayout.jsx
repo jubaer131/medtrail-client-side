@@ -2,15 +2,23 @@
 
 import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import UseOrganizer from '../Hooks/UseOrganizer';
+
 
 const DashboardLayout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+
+
+    const [role, isLoading] = UseOrganizer()
+
+    console.log(role)
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
-    const isOrganizer = true
+
 
     return (
         <div className="relative min-h-screen md:flex">
@@ -44,19 +52,23 @@ const DashboardLayout = () => {
                 <h2 className="text-2xl font-bold px-4">Sidebar</h2>
                 <nav>
                     {
-                        isOrganizer ? <>
+                        role === 'admin' && <>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='/dashboard'>Organizer Profile</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='addacamp'>Add a camp</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link>Manage camp</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link>Manage register camp</Link></a>
 
-                        </> : <>
+                        </>}
+                    {
+                        role === 'guest' && <>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link >Analytics</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link >Participant Profile</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link >Registered Camp</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link >Payment History</Link></a>
                         </>
+
                     }
+
 
 
                     <div className="divider text-black"></div>

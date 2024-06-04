@@ -4,12 +4,14 @@ import { AuthContext } from '../Provider/Authprovider';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { FcGoogle } from 'react-icons/fc';
+import UseAxiosPublic from '../Hooks/UseAxiosPublic';
 
 const Login = () => {
 
     const { googlelogin, loading, signIn } = useContext(AuthContext)
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const navigate = useNavigate();
+    const axiosPublic = UseAxiosPublic()
 
 
     const onSubmit = data => {
@@ -37,7 +39,9 @@ const Login = () => {
                 console.log(result.user);
                 const userInfo = {
                     email: result.user?.email,
-                    name: result.user?.displayName
+                    name: result.user?.displayName,
+                    role: 'guest',
+
                 }
                 axiosPublic.post('/users', userInfo)
                     .then(res => {

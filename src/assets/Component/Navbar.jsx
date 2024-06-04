@@ -10,7 +10,7 @@ const Navbar = () => {
     const options = <>
 
         <li><Link to="/">Home</Link></li>
-        <li><Link >Available Camps</Link></li>
+        <li><Link to='/availablecamp'>Available Camps</Link></li>
         <li><Link to="/login">Join Us</Link></li>
     </>
 
