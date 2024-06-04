@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import UseOrganizer from "../Hooks/UseOrganizer";
 
@@ -5,7 +6,8 @@ import UseOrganizer from "../Hooks/UseOrganizer";
 const OrganizerProfile = () => {
 
     const { user } = UseAuth()
-    const [role, isLoading] = UseOrganizer()
+    const [item, isLoading] = UseOrganizer()
+    console.log(item)
     return (
         <div>
             <div className='flex justify-center items-center '>
@@ -26,10 +28,10 @@ const OrganizerProfile = () => {
                         </a>
 
                         <p className='p-2 uppercase px-4 text-xs text-white bg-pink-500 rounded-full'>
-                            {role === 'admin' ? <span>Admin</span> : <span>Participent</span>}
+                            {item.role === 'admin' ? <span>Admin</span> : <span>Participent</span>}
                         </p>
                         <p className='mt-2 text-xl font-medium text-gray-800 '>
-                            User Id:{user.uid}
+
                         </p>
                         <div className='w-full p-2 mt-4 rounded-lg'>
                             <div className='flex flex-wrap items-center justify-between text-sm text-gray-600 '>
@@ -45,9 +47,9 @@ const OrganizerProfile = () => {
                                 </p>
 
                                 <div>
-                                    <button className='bg-[#F43F5E] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
+                                    <Link to={`/dashboard/updateprofile`}> <button className='bg-[#F43F5E] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
                                         Update Profile
-                                    </button>
+                                    </button></Link>
 
                                 </div>
                             </div>
@@ -56,6 +58,7 @@ const OrganizerProfile = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

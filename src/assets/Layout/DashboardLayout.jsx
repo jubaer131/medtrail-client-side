@@ -10,9 +10,9 @@ const DashboardLayout = () => {
 
 
 
-    const [role, isLoading] = UseOrganizer()
+    const [item, isLoading] = UseOrganizer()
 
-    console.log(role)
+    console.log(item)
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -52,22 +52,19 @@ const DashboardLayout = () => {
                 <h2 className="text-2xl font-bold px-4">Sidebar</h2>
                 <nav>
                     {
-                        role === 'admin' && <>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='/dashboard'>Organizer Profile</Link></a>
+                        item.role === 'admin' ? <>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='/organizerprofile'>Organizer Profile</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='addacamp'>Add a camp</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link>Manage camp</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link>Manage register camp</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='managecamp'>Manage camp</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='manageregistercamp'>Manage register camp</Link></a>
 
+                        </> : <>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='participantprofile'>Participant Profile</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='analytics'>Analytics</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='registeredcamp'>Registered Camp</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='paymenthistory'>Payment History</Link></a>
                         </>}
-                    {
-                        role === 'guest' && <>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link >Analytics</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link >Participant Profile</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link >Registered Camp</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link >Payment History</Link></a>
-                        </>
 
-                    }
 
 
 

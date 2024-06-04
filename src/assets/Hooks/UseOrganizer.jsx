@@ -9,22 +9,20 @@ const UseOrganizer = () => {
     console.log('Current User from Useorganizer:', user);
     const axiosPublic = UseAxiosPublic()
 
-    const { data: role = '', isLoading, error } = useQuery({
+    const { data: item = '', isLoading, error } = useQuery({
         queryKey: ['role', user?.email],
         // enabled: !loading && !!user?.email,
         queryFn: async () => {
 
             const { data } = await axiosPublic.get(`/user/${user?.email}`);
             console.log('Received data:', data);
-            return data.role;
+            return data;
         },
     });
 
-    // if (error) {
-    //     console.error('Error fetching role:', error);
-    // }
 
-    return [role, isLoading];
+
+    return [item, isLoading];
 };
 
 export default UseOrganizer;

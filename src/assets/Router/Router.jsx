@@ -11,6 +11,14 @@ import OrganizerProfile from "../Dashboard/OrganizerProfile";
 import AddaCamp from "../Dashboard/AddaCamp";
 import AvailableCamp from "../Pages/AvailableCamp";
 import DetailsAvailableCamp from "../Pages/DetailsAvailableCamp";
+import UpdateProfile from "../Dashboard/UpdateProfile";
+import ManageCamp from "../Dashboard/ManageCamp";
+import ManageRegisterCamp from "../Dashboard/ManageRegisterCamp";
+import ParticipantProfile from "../Dashboard/ParticipantProfile";
+import CommonRoute from "../Layout/CommonRoute";
+import Analytics from "../Dashboard/Analytics";
+import ParticipantRegisteredCamp from "../Dashboard/ParticipantRegisteredCamp";
+import PaymentHistory from "../Dashboard/PaymentHistory";
 
 
 const router = createBrowserRouter([
@@ -49,15 +57,49 @@ const router = createBrowserRouter([
         path: '/dashboard',
         element: <DashboardLayout></DashboardLayout>,
         children: [
-
+            // organizer route
             {
                 index: true,
+                element: <CommonRoute></CommonRoute>
+            },
+            {
+                index: 'organizerprofile',
                 element: <OrganizerProfile></OrganizerProfile>
             },
             {
                 path: 'addacamp',
                 element: <AddaCamp></AddaCamp>
             },
+            {
+                path: 'updateprofile',
+                element: <UpdateProfile></UpdateProfile>
+            },
+            {
+                path: 'managecamp',
+                element: <ManageCamp></ManageCamp>
+            },
+            {
+                path: 'manageregistercamp',
+                element: <ManageRegisterCamp></ManageRegisterCamp>
+            },
+
+            // participant route
+            {
+                path: 'participantprofile',
+                element: <ParticipantProfile></ParticipantProfile>
+            },
+            {
+                path: 'analytics',
+                element: <Analytics></Analytics>
+            },
+            {
+                path: 'registeredcamp',
+                element: <ParticipantRegisteredCamp></ParticipantRegisteredCamp>
+            },
+            {
+                path: 'paymenthistory',
+                element: <PaymentHistory></PaymentHistory>
+            }
 
 
         ]
