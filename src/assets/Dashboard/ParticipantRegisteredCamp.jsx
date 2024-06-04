@@ -5,7 +5,7 @@ const ParticipantRegisteredCamp = () => {
         <div>
             <section className='container px-4 mx-auto pt-12'>
                 <div className='flex items-center gap-x-3'>
-                    <h2 className='text-lg font-medium text-gray-800 '>My Bids</h2>
+                    <h2 className='text-lg font-medium text-gray-800 '>Registered Camp</h2>
 
                     <span className='px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full '>
                         05 Bid
@@ -24,7 +24,7 @@ const ParticipantRegisteredCamp = () => {
                                                 className='py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500'
                                             >
                                                 <div className='flex items-center gap-x-3'>
-                                                    <span>Title</span>
+                                                    <span>Camp Name</span>
                                                 </div>
                                             </th>
 
@@ -32,7 +32,7 @@ const ParticipantRegisteredCamp = () => {
                                                 scope='col'
                                                 className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'
                                             >
-                                                <span>Deadline</span>
+                                                <span>Camp fees</span>
                                             </th>
 
                                             <th
@@ -40,7 +40,7 @@ const ParticipantRegisteredCamp = () => {
                                                 className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'
                                             >
                                                 <button className='flex items-center gap-x-2'>
-                                                    <span>Price</span>
+                                                    <span>Participant Name</span>
                                                 </button>
                                             </th>
 
@@ -48,23 +48,29 @@ const ParticipantRegisteredCamp = () => {
                                                 scope='col'
                                                 className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'
                                             >
-                                                Category
+                                                Payment Status
                                             </th>
 
                                             <th
                                                 scope='col'
                                                 className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'
                                             >
-                                                Status
+                                                Payment confirmation Status
                                             </th>
 
                                             <th className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'>
-                                                Actions
+                                                Feedback
+                                            </th>
+                                            <th className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'>
+                                                Cencle
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody className='bg-white divide-y divide-gray-200 '>
                                         <tr>
+                                            <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
+                                                Build Dynamic Website
+                                            </td>
                                             <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
                                                 Build Dynamic Website
                                             </td>
