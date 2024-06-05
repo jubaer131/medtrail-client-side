@@ -27,7 +27,7 @@ const AddaCamp = () => {
     const onSubmit = async (data) => {
 
         console.log(data);
-        const CampName = data.campName
+        const campName = data.campName
         const image = data.image
         const campFees = data.campFees
         const dateTime = data.dateTime
@@ -37,7 +37,7 @@ const AddaCamp = () => {
         const description = data.description
 
         const campdata = {
-            CampName,
+            campName,
             image,
             campFees,
             dateTime,

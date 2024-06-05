@@ -64,6 +64,8 @@ const BookingModal = ({ campdetails, refetch }) => {
         const emergencyContact = form.emergencyContact.value;
         const partcipentName = user.displayName;
         const partcipentEmail = user.email;
+        const paymentStatus = 'paid';
+        const confirmationStatus = 'pending';
 
         const itemdata = {
             age,
@@ -77,6 +79,8 @@ const BookingModal = ({ campdetails, refetch }) => {
             dateAndTime,
             partcipentName,
             partcipentEmail,
+            confirmationStatus,
+            paymentStatus
         };
 
         try {

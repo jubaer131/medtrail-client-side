@@ -17,7 +17,7 @@ const UpdateManageCamp = () => {
                     return match
                 })
     });
-    const { CampName,
+    const { campName,
         image,
         campFees,
         dateTime,
@@ -52,7 +52,7 @@ const UpdateManageCamp = () => {
     const onSubmit = async (data) => {
 
         console.log(data);
-        const CampName = data.campName
+        const campName = data.campName
         const image = data.image
         const campFees = data.campFees
         const dateTime = data.dateTime
@@ -62,7 +62,7 @@ const UpdateManageCamp = () => {
         const description = data.description
 
         const campdata = {
-            CampName,
+            campName,
             image,
             campFees,
             dateTime,
@@ -94,7 +94,7 @@ const UpdateManageCamp = () => {
                         <label className="block text-gray-700">Camp Name</label>
                         <input
                             type="text"
-                            defaultValue={CampName}
+                            defaultValue={campName}
                             {...register('campName', { required: true })}
                             className="w-full mt-1 p-2 border border-gray-300 rounded"
                         />

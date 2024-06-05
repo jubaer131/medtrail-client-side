@@ -30,6 +30,7 @@ const Registation = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         // create user entry in the database
+
                         const userInfo = {
                             name: data.name,
                             email: data.email,
@@ -38,12 +39,12 @@ const Registation = () => {
                         axiosPublic.post('/users', userInfo)
                             .then(res => {
                                 if (res.data.insertedId) {
-                                    console.log('user added to the database')
+
                                     reset();
                                     Swal.fire({
                                         position: 'top-end',
                                         icon: 'success',
-                                        title: 'User created successfully.',
+                                        title: 'SignUp Successfull.',
                                         showConfirmButton: false,
                                         timer: 1500
                                     });

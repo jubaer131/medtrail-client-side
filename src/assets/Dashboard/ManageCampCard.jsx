@@ -8,7 +8,7 @@ const ManageCampCard = ({ item, refetch }) => {
 
     const axiosSecure = UseAxioussecure()
 
-    const { CampName,
+    const { campName,
         image,
         campFees,
         dateTime,
@@ -52,7 +52,7 @@ const ManageCampCard = ({ item, refetch }) => {
         <tbody className='bg-white divide-y divide-gray-200 '>
             <tr>
                 <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
-                    {CampName}
+                    {campName}
                 </td>
 
                 <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>

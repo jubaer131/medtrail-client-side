@@ -59,8 +59,10 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
         const phoneNumber = form.phoneNumber.value;
         const gender = form.gender.value;
         const emergencyContact = form.emergencyContact.value;
-        const partcipentName = user.displayName;
-        const partcipentEmail = user.email;
+        const partcipentName = user?.displayName;
+        const partcipentEmail = user?.email;
+        const PaymentStatus = 'paid';
+        const confirmationStatus = 'pending';
 
         const availablecampdata = {
             age,
@@ -74,6 +76,8 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
             dateTime,
             partcipentName,
             partcipentEmail,
+            PaymentStatus,
+            confirmationStatus
         };
 
         try {
@@ -114,7 +118,7 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
                             >
                                 <DialogPanel className="w-full max-w-md rounded-xl bg-white p-6 ">
                                     <DialogTitle as="h3" className="text-base/7 font-medium text-white">
-                                        Payment successful
+
                                     </DialogTitle>
                                     {/* from here */}
 
