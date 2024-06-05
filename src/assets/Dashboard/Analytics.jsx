@@ -1,56 +1,30 @@
-
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { useQuery } from '@tanstack/react-query';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import UseAxiosPublic from '../Hooks/UseAxiosPublic';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
-
 const Analytics = () => {
+    const axiosPublic = UseAxiosPublic();
 
+    const { data: chartdata = [], isPending, refetch } = useQuery({
+        queryKey: ['chartdata'],
+        queryFn: async () =>
+            await axiosPublic('/analytics')
+                .then(res => {
+                    console.log(res.data);
+                    return res.data;
+                })
+    });
 
-    const data = [
-        {
-            name: 'Page A',
-            uv: 4000,
-            pv: 2400,
-            amt: 2400,
-        },
-        {
-            name: 'Page B',
-            uv: 3000,
-            pv: 1398,
-            amt: 2210,
-        },
-        {
-            name: 'Page C',
-            uv: 2000,
-            pv: 9800,
-            amt: 2290,
-        },
-        {
-            name: 'Page D',
-            uv: 2780,
-            pv: 3908,
-            amt: 2000,
-        },
-        {
-            name: 'Page E',
-            uv: 1890,
-            pv: 4800,
-            amt: 2181,
-        },
-        {
-            name: 'Page F',
-            uv: 2390,
-            pv: 3800,
-            amt: 2500,
-        },
-        {
-            name: 'Page G',
-            uv: 3490,
-            pv: 4300,
-            amt: 2100,
-        },
-    ];
+    if (isPending) {
+        return <div>Loading...</div>;
+    }
+
+    // const data = chartdata.map(camp => ({
+    //     name: camp.campName,
+    //     fee: camp.campFees
+    // }));
 
     const getPath = (x, y, width, height) => {
         return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
@@ -61,33 +35,36 @@ const Analytics = () => {
 
     const TriangleBar = (props) => {
         const { fill, x, y, width, height } = props;
-
         return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
     };
+
     return (
-        <div className='flex justify-center  h-screen mt-8'>
-            <BarChart
-                width={800}
-                height={500}
-                data={data}
-                margin={{
-                    top: 20,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                    {data.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-                    ))}
-                </Bar>
-            </BarChart>
+        <div className='flex justify-center h-screen mt-8'>
+            <ResponsiveContainer width="100%" height={400}>
+                <BarChart
+                    data={chartdata}
+                    margin={{
+                        top: 20,
+                        right: 30,
+                        left: 20,
+                        bottom: 5,
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey='campName' />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="campFees" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                        {chartdata.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+                        ))}
+                    </Bar>
+                </BarChart>
+            </ResponsiveContainer>
         </div>
     );
 };
 
 export default Analytics;
+

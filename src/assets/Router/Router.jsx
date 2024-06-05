@@ -76,7 +76,7 @@ const router = createBrowserRouter([
                 element: <ManageCamp></ManageCamp>
             },
             {
-                path: 'updatemanagecamp',
+                path: 'updatemanagecamp/:id',
                 element: <UpdateManageCamp></UpdateManageCamp>
             },
             {

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import UseOrganizer from "../Hooks/UseOrganizer";
+import UpdateModal from "../ShardComponent/UpdateModal";
 
 
 const ParticipantProfile = () => {
@@ -47,9 +48,9 @@ const ParticipantProfile = () => {
                                     </p>
 
                                     <div>
-                                        <Link to={`/dashboard/updateprofile`}> <button className='bg-[#F43F5E] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
-                                            Update Profile
-                                        </button></Link>
+                                        <button className='bg-[#F43F5E] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
+                                            <UpdateModal></UpdateModal>
+                                        </button>
 
                                     </div>
                                 </div>

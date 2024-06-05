@@ -70,7 +70,7 @@ const ManageCampCard = ({ item, refetch }) => {
                     <button onClick={() => handleDeleteCamp(_id)}><FaTrashAlt className="text-red-600"></FaTrashAlt> </button>
                 </td>
                 <td className='px-4 py-4 text-sm whitespace-nowrap'>
-                    <Link to='/dashboard/updatemanagecamp'><button>Edite</button></Link>
+                    <Link to={`/dashboard/updatemanagecamp/${_id}`}><button>Edite</button></Link>
                 </td>
             </tr>
         </tbody>
