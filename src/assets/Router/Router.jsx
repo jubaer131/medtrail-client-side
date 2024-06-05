@@ -11,7 +11,6 @@ import OrganizerProfile from "../Dashboard/OrganizerProfile";
 import AddaCamp from "../Dashboard/AddaCamp";
 import AvailableCamp from "../Pages/AvailableCamp";
 import DetailsAvailableCamp from "../Pages/DetailsAvailableCamp";
-import UpdateProfile from "../Dashboard/UpdateProfile";
 import ManageCamp from "../Dashboard/ManageCamp";
 import ManageRegisterCamp from "../Dashboard/ManageRegisterCamp";
 import ParticipantProfile from "../Dashboard/ParticipantProfile";
@@ -19,6 +18,7 @@ import CommonRoute from "../Layout/CommonRoute";
 import Analytics from "../Dashboard/Analytics";
 import ParticipantRegisteredCamp from "../Dashboard/ParticipantRegisteredCamp";
 import PaymentHistory from "../Dashboard/PaymentHistory";
+import UpdateManageCamp from "../Dashboard/UpdateManageCamp";
 
 
 const router = createBrowserRouter([
@@ -70,13 +70,14 @@ const router = createBrowserRouter([
                 path: 'addacamp',
                 element: <AddaCamp></AddaCamp>
             },
-            {
-                path: 'updateprofile',
-                element: <UpdateProfile></UpdateProfile>
-            },
+
             {
                 path: 'managecamp',
                 element: <ManageCamp></ManageCamp>
+            },
+            {
+                path: 'updatemanagecamp',
+                element: <UpdateManageCamp></UpdateManageCamp>
             },
             {
                 path: 'manageregistercamp',

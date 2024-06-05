@@ -8,7 +8,7 @@ const ManageCamp = () => {
 
     const axiosSecure = UseAxioussecure()
 
-    const { data: managecamp = [], isPending } = useQuery({
+    const { data: managecamp = [], isPending, refetch } = useQuery({
         queryKey: ['managecamp'],
         queryFn: async () =>
             await axiosSecure('/managecamp')
@@ -82,7 +82,7 @@ const ManageCamp = () => {
                                         </tr>
                                     </thead>
                                     {
-                                        managecamp.map(item => <ManageCampCard item={item}></ManageCampCard>)
+                                        managecamp.map(item => <ManageCampCard item={item} refetch={refetch}></ManageCampCard>)
                                     }
                                 </table>
                             </div>
