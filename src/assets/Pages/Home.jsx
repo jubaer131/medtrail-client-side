@@ -1,5 +1,6 @@
 import Slider from "../Component/Slider";
 import PopularMedicalCamp from "../Component/PopularMedicalCamp";
+import FeedbackSection from "../Component/FeedbackSection";
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Slider></Slider>
             <PopularMedicalCamp ></PopularMedicalCamp>
+            <FeedbackSection></FeedbackSection>
         </div>
     );
 };

@@ -58,9 +58,9 @@ const ParticipantRegisterdCard = ({ registercamp, refetch }) => {
 
                     {partcipentName}
                 </td>
-
+                {/* payment setap */}
                 <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
-                    {PaymentStatus === 'Pay' ? <button className="text-yellow-500 btn">Pay</button> : <p className=" text-green-500">Paid</p>
+                    {PaymentStatus === 'Pay' ? <Link to={`/dashboard/payment/${_id}`}><button className="text-yellow-500 btn">Pay</button></Link> : <p className=" text-green-500">Paid</p>
 
 
                     }
