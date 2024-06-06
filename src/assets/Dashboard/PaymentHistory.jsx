@@ -1,14 +1,28 @@
+import { useQuery } from "@tanstack/react-query";
+import UseAxiosPublic from "../Hooks/UseAxiosPublic";
+import PaymentHistoryCard from "./PaymentHistoryCard";
 
 
 const PaymentHistory = () => {
+
+    const axiosPublic = UseAxiosPublic()
+
+    const { data: history = [], isPending, refetch } = useQuery({
+        queryKey: ['history'],
+        queryFn: async () =>
+            await axiosPublic('/paymenthistory')
+                .then(res => {
+                    return res.data;
+                })
+    });
 
 
     return (
         <div>
             <section className="container px-4 mx-auto pt-12">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
-                    <h2 className="text-lg font-medium text-gray-800">My Bids</h2>
-                    <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">05 Bid</span>
+                    <h2 className="text-lg font-medium text-gray-800">Payment History</h2>
+                    <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full"></span>
                 </div>
 
                 <div className="flex flex-col mt-6">
@@ -48,25 +62,10 @@ const PaymentHistory = () => {
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody className="bg-white divide-y divide-gray-200">
-                                        <tr>
-                                            <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                Build Dynamic Website
-                                            </td>
-                                            <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                10/04/2024
-                                            </td>
-                                            <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                $200
-                                            </td>
-                                            <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                                                <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-yellow-100/60 text-yellow-500">
-                                                    <span className="h-1.5 w-1.5 rounded-full bg-yellow-500"></span>
-                                                    <h2 className="text-sm font-normal">Pending</h2>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                    {
+                                        history.map(historydata => <PaymentHistoryCard historydata={historydata} refetch={refetch}></PaymentHistoryCard>)
+
+                                    }
                                 </table>
                             </div>
                         </div>

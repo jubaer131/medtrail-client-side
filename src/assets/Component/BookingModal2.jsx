@@ -61,7 +61,7 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
         const emergencyContact = form.emergencyContact.value;
         const partcipentName = user?.displayName;
         const partcipentEmail = user?.email;
-        const PaymentStatus = 'paid';
+        const PaymentStatus = 'Pay';
         const confirmationStatus = 'pending';
 
         const availablecampdata = {

@@ -19,6 +19,7 @@ import Analytics from "../Dashboard/Analytics";
 import ParticipantRegisteredCamp from "../Dashboard/ParticipantRegisteredCamp";
 import PaymentHistory from "../Dashboard/PaymentHistory";
 import UpdateManageCamp from "../Dashboard/UpdateManageCamp";
+import FeedBack from "../Dashboard/FeedBack";
 
 
 const router = createBrowserRouter([
@@ -57,11 +58,13 @@ const router = createBrowserRouter([
         path: '/dashboard',
         element: <DashboardLayout></DashboardLayout>,
         children: [
+            // common route
+            // {
+            //     index: true,
+            //     element: <CommonRoute></CommonRoute>
+            // },
+
             // organizer route
-            {
-                index: true,
-                element: <CommonRoute></CommonRoute>
-            },
             {
                 path: 'organizerprofile',
                 element: <OrganizerProfile></OrganizerProfile>
@@ -100,6 +103,10 @@ const router = createBrowserRouter([
             {
                 path: 'paymenthistory',
                 element: <PaymentHistory></PaymentHistory>
+            },
+            {
+                path: 'feedback',
+                element: <FeedBack></FeedBack>
             }
 
 
