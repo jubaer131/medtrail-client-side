@@ -1,5 +1,4 @@
 
-
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
@@ -7,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 import UseAxioussecure from "../Hooks/UseAxioussecure";
 import UseAuth from "../Hooks/UseAuth";
 import { useQuery } from "@tanstack/react-query";
-import { toast } from "react-toastify";
 
 
-const ChackoutForm = ({ id }) => {
-    console.log(id)
+
+const CheckoutForm2 = ({ _id }) => {
+
 
     const [error, seterror] = useState('')
     const [clientSecret, setClientSecret] = useState("");
@@ -26,15 +25,16 @@ const ChackoutForm = ({ id }) => {
     const { data: chectout = [], isPending, refetch } = useQuery({
         queryKey: ['checkout'],
         queryFn: async () =>
-            await axiosSecure('/paymenthistory')
+            await axiosSecure('/popularmedicalcamp')
                 .then(res => {
-                    const match = res.data.find(item => item._id === id);
+                    const match = res.data.find(item => item._id === _id);
                     return match;
                 })
     });
 
 
     const totalPrice = chectout.campFees;
+    console.log(totalPrice)
 
 
     useEffect(() => {
@@ -136,13 +136,11 @@ const ChackoutForm = ({ id }) => {
                     },
                 }}
             />
-            <button className="btn btn-primary btn-sm mt-3" type="submit" >
-                Pay
-            </button>
+
             <p className="text-red-600">{error}</p>
             {transactionid && <p className="text-green-600">your transactionid : {transactionid}</p>}
         </form>
     );
 };
 
-export default ChackoutForm;
+export default CheckoutForm2;

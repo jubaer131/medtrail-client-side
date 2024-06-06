@@ -9,9 +9,9 @@ const Navbar = () => {
 
     const options = <>
 
-        <li><Link to="/">Home</Link></li>
-        <li><Link to='/availablecamp'>Available Camps</Link></li>
-        <li><Link to="/login">Join Us</Link></li>
+        <li><Link className="text-sm font-medium" to="/">Home</Link></li>
+        <li><Link className="text-sm font-medium" to='/availablecamp'>Available Camps</Link></li>
+        <li><Link className="text-sm font-medium" to="/login">Join Us</Link></li>
     </>
 
 
@@ -19,7 +19,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar  fixed container mx-auto  bg-[#0055B4] z-10 shadow-sm text-white">
+        <div className="navbar  fixed container mx-auto  bg-[#0055B4] z-10 shadow-sm text-white rounded-xl">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,7 +29,7 @@ const Navbar = () => {
                         {options}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">MedTrail</a>
+                <a className="btn btn-ghost text-xl font-semibold">MedTrail</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

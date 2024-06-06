@@ -3,7 +3,12 @@
 import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import UseOrganizer from '../Hooks/UseOrganizer';
-
+import { ImProfile } from "react-icons/im";
+import { SiGoogleanalytics } from "react-icons/si";
+import { FaCashRegister } from "react-icons/fa";
+import { MdPayment } from "react-icons/md";
+import { IoHomeSharp } from "react-icons/io5";
+import { RiLogoutCircleRFill } from "react-icons/ri";
 
 const DashboardLayout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -53,16 +58,16 @@ const DashboardLayout = () => {
                 <nav>
                     {
                         item.role === 'admin' ? <>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='organizerprofile'>Organizer Profile</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='addacamp'>Add a camp</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='organizerprofile'><ImProfile></ImProfile> Organizer Profile</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='addacamp'> Add a camp</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='managecamp'>Manage camp</Link></a>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='manageregistercamp'>Manage register camp</Link></a>
 
                         </> : <>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='participantprofile'>Participant Profile</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='analytics'>Analytics</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='registeredcamp'>Registered Camp</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='paymenthistory'>Payment History</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='participantprofile'><ImProfile></ImProfile> Participant Profile</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='analytics'>< SiGoogleanalytics></SiGoogleanalytics> Analytics</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='registeredcamp'> <FaCashRegister></FaCashRegister> Registered Camp</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='paymenthistory'><MdPayment></MdPayment> Payment History</Link></a>
                         </>}
 
 
@@ -72,8 +77,8 @@ const DashboardLayout = () => {
                     <div className="divider text-white"></div>
                     <div className="divider text-white"></div>
 
-                    <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='/'>Home</Link></a>
-                    <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link>Logout</Link></a>
+                    <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='/'><IoHomeSharp></IoHomeSharp> Home</Link></a>
+                    <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' ><RiLogoutCircleRFill></RiLogoutCircleRFill> Logout</Link></a>
 
                     {/* Add more sidebar links as needed */}
                 </nav>

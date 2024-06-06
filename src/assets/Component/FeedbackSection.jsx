@@ -19,7 +19,7 @@ const FeedbackSection = () => {
     console.log(review)
     return (
         <div>
-            <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
+            <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800 mt-16">
                 <div className="container  mx-auto space-y-8">
                     <div className="space-y-8 text-center mb-16">
                         <h2 className="text-4xl font-bold ">Participant Feedback</h2>

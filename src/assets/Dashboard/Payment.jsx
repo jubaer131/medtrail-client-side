@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Getway_PK);
 
 const Payment = () => {
-
+    console.log(import.meta.env.VITE_Payment_Getway_PK)
     const { id } = useParams()
     return (
         <div className='max-w-3xl mx-auto mt-8'>

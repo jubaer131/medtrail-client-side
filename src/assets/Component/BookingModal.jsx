@@ -5,7 +5,16 @@ import { useMutation } from '@tanstack/react-query';
 import UseAxiosPublic from '../Hooks/UseAxiosPublic';
 import { toast } from 'react-toastify';
 
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm2 from './CheckoutForm2';
+
+
+const stripePromise = loadStripe(import.meta.env.VITE_Payment_Getway_PK);
+
+
 const BookingModal = ({ campdetails, refetch }) => {
+
 
     let [isOpen, setIsOpen] = useState(false)
     const [gender, setGender] = useState('');
@@ -45,12 +54,13 @@ const BookingModal = ({ campdetails, refetch }) => {
         },
         onSuccess: async (data) => {
             toast.success('Booking successful');
-            refetch()
+
             // Update participant count
             await axiosPublic.patch(`/joincampdetails/${_id}`, {
                 participantCount: 1,
             });
             setIsOpen(false);
+            refetch()
         },
 
     });
@@ -64,7 +74,7 @@ const BookingModal = ({ campdetails, refetch }) => {
         const emergencyContact = form.emergencyContact.value;
         const partcipentName = user.displayName;
         const partcipentEmail = user.email;
-        const paymentStatus = 'paid';
+        const PaymentStatus = 'paid';
         const confirmationStatus = 'pending';
 
         const itemdata = {
@@ -80,7 +90,7 @@ const BookingModal = ({ campdetails, refetch }) => {
             partcipentName,
             partcipentEmail,
             confirmationStatus,
-            paymentStatus
+            PaymentStatus
         };
 
         try {
@@ -149,11 +159,11 @@ const BookingModal = ({ campdetails, refetch }) => {
                                         <div className='flex gap-5'>
                                             <div>
                                                 <label className="block mb-2 font-medium">Participent Name</label>
-                                                <input type="text" readOnly className="w-full p-2 border rounded" defaultValue={user.displayName} />
+                                                <input type="text" readOnly className="w-full p-2 border rounded" defaultValue={user?.displayName} />
                                             </div>
                                             <div>
                                                 <label className="block mb-2 font-medium">Partcipent Email</label>
-                                                <input type="text" readOnly className="w-full p-2 border rounded" defaultValue={user.email} />
+                                                <input type="text" readOnly className="w-full p-2 border rounded" defaultValue={user?.email} />
                                             </div>
                                         </div>
 
@@ -209,7 +219,9 @@ const BookingModal = ({ campdetails, refetch }) => {
 
                                         <div>
                                             {/* payment */}
-                                            <h1>payment</h1>
+                                            <Elements stripe={stripePromise}>
+                                                <CheckoutForm2 _id={_id}></CheckoutForm2>
+                                            </Elements>
                                         </div>
 
                                         <button onClick={close} type="submit" className="btn my_modal_6 btn-primary w-full">Join Camp</button>

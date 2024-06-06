@@ -29,7 +29,7 @@ export default function Slider() {
             >
                 <SwiperSlide>
                     <div
-                        className='w-full bg-center bg-cover h-[38rem]'
+                        className='w-full bg-center bg-cover h-[38rem] rounded-2xl'
                         style={{
                             backgroundImage: `url("https://i.ibb.co/kJXfPJv/irak-313-1.jpg")`,
                         }}
@@ -37,7 +37,7 @@ export default function Slider() {
                         <div className='flex items-center justify-center w-full h-full'>
                             <div className='text-center'>
                                 <h1 className='text-xl font-semibold text-white lg:text-2xl'>
-                                    A number of qualified personnel came from UK to train the medical officers in modern methods in this field.
+                                    Empowering Health: A Triumph of Success at the Annual Medical Camp
                                 </h1>
                                 <br />
 
@@ -47,15 +47,15 @@ export default function Slider() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className='w-full bg-center bg-cover h-[38rem]'
+                        className='w-full bg-center bg-cover h-[38rem] rounded-2xl'
                         style={{
-                            backgroundImage: `url("https://i.ibb.co/0Qs2P0K/1000-F-503372865-Kf-SGe-ALf0iz-Xrkpe-Afdz-Dv-HKLY2-MThw-O.jpg")`,
+                            backgroundImage: `url("https://i.ibb.co/B4dkCTB/1-2048x1365.jpg")`,
                         }}
                     >
                         <div className='flex items-center justify-center w-full h-full '>
                             <div className='text-center'>
                                 <h1 className='text-xl font-semibold text-white lg:text-2xl'>
-                                    Ms. Millicent Kaoga (carrying blue sling bag) representing the Karen Hospital
+                                    Transforming Lives: How a Medical Camp Became a Beacon of Hope and Healing"
                                 </h1>
                                 <br />
 
@@ -65,15 +65,15 @@ export default function Slider() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className='w-full bg-center bg-cover h-[38rem]'
+                        className='w-full bg-center bg-cover h-[38rem] rounded-2xl'
                         style={{
-                            backgroundImage: `url("https://i.ibb.co/HqLs51h/DSC-9046-1200x630.jpg")`,
+                            backgroundImage: `url("https://i.ibb.co/v47GzqX/DSC-9046-1200x630.jpg")`,
                         }}
                     >
                         <div className='flex items-center justify-center w-full h-full '>
                             <div className='text-center'>
-                                <h1 className='text-3xl font-semibold text-white lg:text-4xl'>
-                                    Build your new <span class='text-blue-400'>Saas</span> Project
+                                <h1 className='text-xl font-semibold text-white lg:text-2xl'>
+                                    Miracles in Motion: The Unprecedented Success Story of Our Medical Camp
                                 </h1>
                                 <br />
 
@@ -83,15 +83,15 @@ export default function Slider() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className='w-full bg-center bg-cover h-[38rem]'
+                        className='w-full bg-center bg-cover h-[38rem] rounded-2xl'
                         style={{
-                            backgroundImage: `url("https://i.ibb.co/gPXt80w/medical2020-28-scaled.jpg")`,
+                            backgroundImage: `url("https://i.ibb.co/vDTyRz9/medical-team-giving-highfive-little-child-after-successful-examination-celebrating-end-appointment-m.jpg")`,
                         }}
                     >
                         <div className='flex items-center justify-center w-full h-full '>
                             <div className='text-center'>
-                                <h1 className='text-3xl font-semibold text-white lg:text-4xl'>
-                                    Build your new <span class='text-blue-400'>Saas</span> Project
+                                <h1 className='text-xl font-semibold text-white lg:text-2xl'>
+                                    Breaking Barriers: The Remarkable Impact of Our Successful Medical Camp
                                 </h1>
                                 <br />
 
