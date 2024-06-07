@@ -16,7 +16,7 @@ const ParticipantProfile = () => {
                     <div className='bg-white shadow-lg rounded-2xl w-4/5'>
                         <img
                             alt='profile'
-                            src='https://wallpapercave.com/wp/wp10784415.jpg'
+                            src='https://img.freepik.com/premium-photo/islamic-background-illustration_941097-24450.jpg?w=1380'
                             className='w-full mb-4 rounded-t-lg md:h-[350px]'
                         />
                         <div className='flex flex-col items-center justify-center p-4 h-[400px] -mt-16'>
@@ -28,7 +28,7 @@ const ParticipantProfile = () => {
                                 />
                             </a>
 
-                            <p className='p-2 uppercase px-4 text-xs text-white bg-pink-500 rounded-full'>
+                            <p className='p-2 uppercase px-4 text-xs text-white bg-[#0055B4] rounded-full'>
                                 {item.role === 'admin' ? <span>Admin</span> : <span>Participent</span>}
                             </p>
                             <p className='mt-2 text-xl font-medium text-gray-800 '>
@@ -48,7 +48,7 @@ const ParticipantProfile = () => {
                                     </p>
 
                                     <div>
-                                        <button className='bg-[#F43F5E] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
+                                        <button className='bg-[#0055B4] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
                                             <UpdateModal></UpdateModal>
                                         </button>
 

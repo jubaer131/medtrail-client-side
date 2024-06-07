@@ -21,12 +21,15 @@ import PaymentHistory from "../Dashboard/PaymentHistory";
 import UpdateManageCamp from "../Dashboard/UpdateManageCamp";
 import FeedBack from "../Dashboard/FeedBack";
 import Payment from "../Dashboard/Payment";
-
+import ErrorPage from "../Pages/ErrorPage";
+import Privateroute from "./Privateroute";
+import OrganizerRoute from "./OrganizerRoute";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -57,61 +60,62 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>,
+        element: <Privateroute> <DashboardLayout></DashboardLayout></Privateroute>,
         children: [
             // common route
             {
                 index: true,
-                element: <CommonRoute></CommonRoute>
+                element: <Privateroute> <CommonRoute></CommonRoute></Privateroute>
             },
 
             // organizer route
             {
                 path: 'organizerprofile',
-                element: <OrganizerProfile></OrganizerProfile>
+                element: <OrganizerRoute> <OrganizerProfile></OrganizerProfile></OrganizerRoute>
             },
             {
                 path: 'addacamp',
-                element: <AddaCamp></AddaCamp>
+                element: <OrganizerRoute> <AddaCamp></AddaCamp></OrganizerRoute>,
             },
 
             {
                 path: 'managecamp',
-                element: <ManageCamp></ManageCamp>
+                element: <OrganizerRoute><ManageCamp></ManageCamp></OrganizerRoute>
             },
             {
                 path: 'updatemanagecamp/:id',
-                element: <UpdateManageCamp></UpdateManageCamp>
+                element: <OrganizerRoute><UpdateManageCamp></UpdateManageCamp></OrganizerRoute>
             },
             {
                 path: 'manageregistercamp',
-                element: <ManageRegisterCamp></ManageRegisterCamp>
+                element: <OrganizerRoute><ManageRegisterCamp></ManageRegisterCamp></OrganizerRoute>
             },
 
             // participant route
             {
                 path: 'participantprofile',
-                element: <ParticipantProfile></ParticipantProfile>
+                element: <Privateroute> <ParticipantProfile></ParticipantProfile></Privateroute>
             },
             {
                 path: 'analytics',
-                element: <Analytics></Analytics>
+                element: <Privateroute><Analytics></Analytics></Privateroute>
             },
             {
                 path: 'registeredcamp',
-                element: <ParticipantRegisteredCamp></ParticipantRegisteredCamp>
+                element: <Privateroute><ParticipantRegisteredCamp></ParticipantRegisteredCamp></Privateroute>
             },
             {
                 path: 'paymenthistory',
-                element: <PaymentHistory></PaymentHistory>
+                element: <Privateroute><PaymentHistory></PaymentHistory> </Privateroute>
             },
+
             {
                 path: 'feedback',
-                element: <FeedBack></FeedBack>
+                element: <Privateroute><FeedBack></FeedBack></Privateroute>
             },
             {
                 path: 'payment/:id',
-                element: <Payment></Payment>
+                element: <Privateroute><Payment></Payment></Privateroute>
             },
 
 

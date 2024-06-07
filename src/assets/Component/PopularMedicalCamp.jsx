@@ -26,7 +26,7 @@ const PopularMedicalCamp = () => {
 
     return (
         <div className=" container mx-auto md:mt-36">
-            <h1 className="text-4xl font-bold text-center my-8">Popular medical camps</h1>
+            <h1 className="text-4xl font-bold text-center my-8 text-[#5e87b6]">Popular medical camps</h1>
             <p className="text-center mb-8 text-xl">these popular medical camp offers a transformative experience, blending specialized medical care with recreational <br />activities and a supportive community. From educational workshops to outdoor adventures, it provides a holistic approach <br /> to wellness  empowering young patients to thrive despite their challenges. Year after year</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {camps.slice(0, visibleCamps).map((camp) => (

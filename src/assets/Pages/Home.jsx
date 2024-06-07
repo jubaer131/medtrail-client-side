@@ -6,7 +6,7 @@ import ChildrenSection from "../Component/ChildrenSection";
 
 const Home = () => {
     return (
-        <div>
+        <div >
             <Slider></Slider>
             <PopularMedicalCamp ></PopularMedicalCamp>
             <FeedbackSection></FeedbackSection>

@@ -64,7 +64,7 @@ const ManageCamp = () => {
 
         <section className='container px-4 mx-auto pt-12 min-h-screen'>
             <div className='flex items-center justify-around mb-8 gap-3'>
-                <h2 className='text-2xl font-bold text-gray-800 '>Total Camp</h2>
+                <h2 className='text-2xl font-bold text-[#0055B4] '>Total Camp</h2>
 
                 {/* search bar */}
                 <form onSubmit={handlesearch} >
@@ -77,7 +77,7 @@ const ManageCamp = () => {
                             aria-label='Enter Job Title'
                         />
 
-                        <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
+                        <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-[#0055B4] rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
                             Search
                         </button>
                     </div>

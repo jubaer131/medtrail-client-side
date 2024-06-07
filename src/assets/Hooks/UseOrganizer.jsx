@@ -1,7 +1,6 @@
 
 import { useQuery } from '@tanstack/react-query'
 import UseAuth from './UseAuth';
-import UseAxioussecure from './UseAxioussecure';
 import UseAxiosPublic from './UseAxiosPublic';
 
 const UseOrganizer = () => {

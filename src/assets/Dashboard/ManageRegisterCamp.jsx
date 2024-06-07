@@ -64,7 +64,7 @@ const ManageRegisterCamp = () => {
         <section className='container px-4 mx-auto pt-12'>
             <div className='flex items-center gap-x-3 justify-around'>
                 <div className="flex gap-2">
-                    <h2 className='text-2xl font-bold text-gray-800 '>Register Camp</h2>
+                    <h2 className='text-2xl font-bold text-[#0055B4] '>Register Camp</h2>
                 </div>
 
                 <form onSubmit={handlesearch}>
@@ -77,7 +77,7 @@ const ManageRegisterCamp = () => {
                             aria-label='Enter Job Title'
                         />
 
-                        <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
+                        <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-[#0055B4] rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
                             Search
                         </button>
                     </div>

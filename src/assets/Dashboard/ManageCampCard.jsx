@@ -3,6 +3,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import UseAxioussecure from "../Hooks/UseAxioussecure";
 import { Link } from "react-router-dom";
+import { GrUpdate } from "react-icons/gr";
 
 const ManageCampCard = ({ item, refetch }) => {
 
@@ -67,10 +68,10 @@ const ManageCampCard = ({ item, refetch }) => {
 
                 </td>
                 <td className='px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap'>
-                    <button onClick={() => handleDeleteCamp(_id)}><FaTrashAlt className="text-red-600"></FaTrashAlt> </button>
+                    <button onClick={() => handleDeleteCamp(_id)}><FaTrashAlt className="text-orange-400"></FaTrashAlt> </button>
                 </td>
                 <td className='px-4 py-4 text-sm whitespace-nowrap'>
-                    <Link to={`/dashboard/updatemanagecamp/${_id}`}><button>Edite</button></Link>
+                    <Link to={`/dashboard/updatemanagecamp/${_id}`}><button><GrUpdate className="text-[#0055B4]"></GrUpdate></button></Link>
                 </td>
             </tr>
         </tbody>

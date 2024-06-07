@@ -60,12 +60,12 @@ const AddaCamp = () => {
 
     return (
 
-        <div className="max-w-4xl mx-auto p-8 bg-white shadow-md rounded-lg">
-            <h1 className="text-center text-3xl font-semibold my-7">Add A Camp</h1>
+        <div className="max-w-4xl mx-auto p-8  shadow-md rounded-lg bg-[#0055B4]">
+            <h1 className="text-center text-3xl font-semibold my-7 text-white">Add A Camp</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-gray-700">Camp Name</label>
+                        <label className="block text-gray-700 text-white">Camp Name</label>
                         <input
                             type="text"
                             {...register('campName', { required: true })}
@@ -74,7 +74,7 @@ const AddaCamp = () => {
                         {errors.campName && <p className="text-red-500 text-sm mt-1">Camp Name is required</p>}
                     </div>
                     <div>
-                        <label className="block text-gray-700">Image</label>
+                        <label className="block  text-white">Image Url</label>
                         <input
                             type="url"
                             {...register('image', { required: true })}
@@ -86,7 +86,7 @@ const AddaCamp = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-gray-700">Camp Fees</label>
+                        <label className="block  text-white">Camp Fees</label>
                         <input
                             type="number"
                             {...register('campFees', { required: true })}
@@ -95,7 +95,7 @@ const AddaCamp = () => {
                         {errors.campFees && <p className="text-red-500 text-sm mt-1">Camp Fees are required</p>}
                     </div>
                     <div>
-                        <label className="block text-gray-700">Date & Time</label>
+                        <label className="block text-white">Date & Time</label>
                         <input
                             type="datetime-local"
                             {...register('dateTime', { required: true })}
@@ -107,7 +107,7 @@ const AddaCamp = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-gray-700">Location</label>
+                        <label className="block text-white">Location</label>
                         <input
                             type="text"
                             {...register('location', { required: true })}
@@ -116,7 +116,7 @@ const AddaCamp = () => {
                         {errors.location && <p className="text-red-500 text-sm mt-1">Location is required</p>}
                     </div>
                     <div>
-                        <label className="block text-gray-700">Healthcare Professional Name</label>
+                        <label className="block text-white">Healthcare Professional Name</label>
                         <input
                             type="text"
                             {...register('healthcareProfessional', { required: true })}
@@ -127,7 +127,7 @@ const AddaCamp = () => {
                 </div>
 
                 <div>
-                    <label className="block text-gray-700">Participant Count (starts at 0)</label>
+                    <label className="block text-white">Participant Count (starts at 0)</label>
                     <input
                         type="number"
                         {...register('participantCount', { required: true, min: 0 })}
@@ -138,7 +138,7 @@ const AddaCamp = () => {
                 </div>
 
                 <div>
-                    <label className="block text-gray-700">Description</label>
+                    <label className="block text-white">Description</label>
                     <textarea
                         {...register('description', { required: true })}
                         className="w-full mt-1 p-2 border border-gray-300 rounded"
