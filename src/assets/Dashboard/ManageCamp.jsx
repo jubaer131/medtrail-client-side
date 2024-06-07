@@ -45,7 +45,7 @@ const ManageCamp = () => {
     const handlepagination = e => {
         console.log(e)
         setcurrentpage(e)
-        refetch()
+
     }
     const handlesearch = e => {
         e.preventDefault()

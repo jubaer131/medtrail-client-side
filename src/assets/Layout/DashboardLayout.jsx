@@ -9,7 +9,9 @@ import { FaCashRegister } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 import { IoHomeSharp } from "react-icons/io5";
 import { RiLogoutCircleRFill } from "react-icons/ri";
-
+import { MdOutlineAddPhotoAlternate } from "react-icons/md";
+import { FcManager } from "react-icons/fc";
+import { FaRegistered } from "react-icons/fa6";
 const DashboardLayout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -59,9 +61,9 @@ const DashboardLayout = () => {
                     {
                         item.role === 'admin' ? <>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='organizerprofile'><ImProfile></ImProfile> Organizer Profile</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='addacamp'> Add a camp</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='managecamp'>Manage camp</Link></a>
-                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link to='manageregistercamp'>Manage register camp</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='addacamp'><MdOutlineAddPhotoAlternate></MdOutlineAddPhotoAlternate> Add a camp</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='managecamp'><FcManager></FcManager> Manage camp</Link></a>
+                            <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='manageregistercamp'><FaRegistered></FaRegistered> Manage register camp</Link></a>
 
                         </> : <>
                             <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='participantprofile'><ImProfile></ImProfile> Participant Profile</Link></a>
