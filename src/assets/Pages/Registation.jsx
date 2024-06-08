@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { GoogleAuthProvider } from "firebase/auth/web-extension";
 import Swal from "sweetalert2";
 import UseAxiosPublic from "../Hooks/UseAxiosPublic";
+import { Helmet } from "react-helmet";
 
 
 
@@ -61,7 +62,6 @@ const Registation = () => {
 
 
     const handleSignIn = () => {
-        if (loading) return;  // Prevent multiple Google sign-ins if loading
 
         googlelogin()
             .then(result => {
@@ -73,7 +73,7 @@ const Registation = () => {
                 }
                 axiosPublic.post('/users', userInfo)
                     .then(res => {
-                        console.log(res.data);
+                        console.log(res.data)
                         navigate('/');
                     })
             })
@@ -85,6 +85,9 @@ const Registation = () => {
         <>
 
             <div className='flex justify-center items-center min-h-[calc(100vh-306px)]'>
+                <Helmet>
+                    <title>Sign up</title>
+                </Helmet>
                 <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
                     <div
                         className='hidden bg-cover bg-center lg:block lg:w-1/2'

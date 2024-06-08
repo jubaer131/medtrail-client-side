@@ -48,14 +48,14 @@ const Navbar = () => {
                             </div>
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 
-                                <li className="text-black"><a>{user.displayName}</a></li>
-                                <li className="text-black"><Link to='/dashboard'>Dashboard</Link></li>
-                                <li className="text-black"><button onClick={logOut}>Logout</button></li>
+                                <li className="text-black font-semibold"><a>{user.displayName}</a></li>
+                                <li className="text-black font-semibold"><Link to='/dashboard'>Dashboard</Link></li>
+                                <li className="text-black font-semibold"><button onClick={logOut}>Logout</button></li>
 
                             </ul>
                         </div>
 
-                    </> : <Link to="/login">Join Us</Link>
+                    </> : ''
                 }
 
 

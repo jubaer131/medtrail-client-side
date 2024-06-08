@@ -12,14 +12,15 @@ import { RiLogoutCircleRFill } from "react-icons/ri";
 import { MdOutlineAddPhotoAlternate } from "react-icons/md";
 import { FcManager } from "react-icons/fc";
 import { FaRegistered } from "react-icons/fa6";
+import { Helmet } from 'react-helmet';
+import UseAuth from '../Hooks/UseAuth';
 const DashboardLayout = () => {
+
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-
 
     const [item, isLoading] = UseOrganizer()
 
-    console.log(item)
+    const { user, logOut } = UseAuth()
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -29,6 +30,10 @@ const DashboardLayout = () => {
 
     return (
         <div className="relative min-h-screen md:flex">
+            <Helmet>
+                <title>Dashboard</title>
+            </Helmet>
+
             {/* Mobile Menu Button */}
             <div className="md:hidden flex justify-between items-center bg-gray-800 text-white px-4 py-3">
                 <h2 className="text-2xl font-bold">Dashboard</h2>
@@ -80,7 +85,7 @@ const DashboardLayout = () => {
                     <div className="divider text-white"></div>
 
                     <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' to='/'><IoHomeSharp></IoHomeSharp> Home</Link></a>
-                    <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' ><RiLogoutCircleRFill></RiLogoutCircleRFill> Logout</Link></a>
+                    <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"><Link className='flex items-center gap-2' ><RiLogoutCircleRFill></RiLogoutCircleRFill><button onClick={logOut}>Logout</button></Link></a>
 
                     {/* Add more sidebar links as needed */}
                 </nav>

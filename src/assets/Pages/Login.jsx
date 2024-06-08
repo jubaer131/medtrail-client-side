@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { FcGoogle } from 'react-icons/fc';
 import UseAxiosPublic from '../Hooks/UseAxiosPublic';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
 
@@ -33,7 +34,7 @@ const Login = () => {
 
     };
     const handleSignIn = () => {
-        if (loading) return;  // Prevent multiple Google sign-ins if loading
+
         googlelogin()
             .then(result => {
                 console.log(result.user);
@@ -54,6 +55,9 @@ const Login = () => {
 
     return (
         <div className='flex justify-center items-center min-h-[calc(100vh-306px)]'>
+            <Helmet>
+                <title>Sign in</title>
+            </Helmet>
             <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
                 <div
                     className='hidden bg-cover bg-center lg:block lg:w-1/2'

@@ -24,7 +24,7 @@ const CampCard = ({ camp }) => {
             </div>
             <div className="flex flex-wrap justify-between">
                 <div className="space-x-2">
-                    <Link to={`/popularcampdetails/${_id}`}> <button className='btn'>Details</button></Link>
+                    <Link to={`/popularcampdetails/${_id}`}> <button className='btn bg-[#0055B4] text-white'>Details</button></Link>
 
                 </div>
 

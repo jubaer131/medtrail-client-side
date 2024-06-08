@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AvailableCampCard = ({ camp }) => {
 
     const {
-        CampName, dateAndTime, image,
+        campName, dateAndTime, image,
         campFees,
         location,
         healthcareProfessional,
@@ -18,7 +18,7 @@ const AvailableCampCard = ({ camp }) => {
 
                 <div className='space-y-2'>
                     <img src={image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
-                    <h2 className="mb-1 text-xl font-semibold">Camp Name : {CampName}</h2>
+                    <h2 className="mb-1 text-xl font-semibold">Camp Name : {campName}</h2>
                     <p className="text-sm dark:text-gray-600">Location : {location}.</p>
                     <p> Health care Professional : {healthcareProfessional}</p>
                     <p> Date And Time : {dateAndTime}</p>
@@ -26,7 +26,7 @@ const AvailableCampCard = ({ camp }) => {
                 </div>
                 <div className="flex flex-wrap justify-between">
                     <div className="space-x-2">
-                        <Link to={`/detailsavailablecamp/${_id}`}> <button className='btn'>Details</button></Link>
+                        <Link to={`/detailsavailablecamp/${_id}`}> <button className='btn bg-[#0055B4] text-white'>Details</button></Link>
 
                     </div>
 

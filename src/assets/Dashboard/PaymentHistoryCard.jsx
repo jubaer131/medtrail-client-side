@@ -15,7 +15,7 @@ const PaymentHistoryCard = ({ historydata }) => {
                     {campName}
                 </td>
                 <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                    {campFees}
+                    ${campFees}
                 </td>
                 <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
                     <h2 className={`inline-flex items-center px-3 py-1 rounded-full gap-x-2 ${PaymentStatus === 'Pay' ? 'bg-yellow-100/60 text-yellow-500' : 'bg-green-100/60 text-green-500'}`}>{

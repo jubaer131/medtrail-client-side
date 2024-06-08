@@ -86,12 +86,12 @@ const UpdateManageCamp = () => {
 
 
     return (
-        <div className="max-w-4xl mx-auto p-8 bg-white shadow-md rounded-lg">
-            <h1 className="text-center text-3xl font-semibold my-7">Update  Camp</h1>
+        <div className="max-w-4xl mx-auto p-8  shadow-md rounded-lg bg-[#0055B4]">
+            <h1 className="text-center text-3xl font-semibold my-7 text-white ">Update  Camp</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-gray-700">Camp Name</label>
+                        <label className="block text-white">Camp Name</label>
                         <input
                             type="text"
                             defaultValue={campName}
@@ -101,7 +101,7 @@ const UpdateManageCamp = () => {
                         {errors.campName && <p className="text-red-500 text-sm mt-1">Camp Name is required</p>}
                     </div>
                     <div>
-                        <label className="block text-gray-700">Image</label>
+                        <label className="block text-white">Image</label>
                         <input
                             type="url"
                             defaultValue={image}
@@ -114,7 +114,7 @@ const UpdateManageCamp = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-gray-700">Camp Fees</label>
+                        <label className="block text-white">Camp Fees</label>
                         <input
                             type="number"
                             defaultValue={campFees}
@@ -124,7 +124,7 @@ const UpdateManageCamp = () => {
                         {errors.campFees && <p className="text-red-500 text-sm mt-1">Camp Fees are required</p>}
                     </div>
                     <div>
-                        <label className="block text-gray-700">Date & Time</label>
+                        <label className="block text-white">Date & Time</label>
                         <input
                             type="datetime-local"
                             defaultValue={dateTime}
@@ -137,7 +137,7 @@ const UpdateManageCamp = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-gray-700">Location</label>
+                        <label className="block text-white">Location</label>
                         <input
                             type="text"
                             defaultValue={location}
@@ -147,7 +147,7 @@ const UpdateManageCamp = () => {
                         {errors.location && <p className="text-red-500 text-sm mt-1">Location is required</p>}
                     </div>
                     <div>
-                        <label className="block text-gray-700">Healthcare Professional Name</label>
+                        <label className="block text-white">Healthcare Professional Name</label>
                         <input
                             type="text"
                             defaultValue={healthcareProfessional}
@@ -159,19 +159,20 @@ const UpdateManageCamp = () => {
                 </div>
 
                 <div>
-                    <label className="block text-gray-700">Participant Count </label>
+                    <label className="block text-white">Participant Count </label>
                     <input
                         type="number"
 
                         {...register('participantCount', { required: true, min: 0 })}
                         className="w-full mt-1 p-2 border border-gray-300 rounded"
                         defaultValue={participantCount}
+                        readOnly
                     />
                     {errors.participantCount && <p className="text-red-500 text-sm mt-1">Participant Count is required and must be at least 0</p>}
                 </div>
 
                 <div>
-                    <label className="block text-gray-700">Description</label>
+                    <label className="block text-white">Description</label>
                     <textarea
                         defaultValue={description}
                         {...register('description', { required: true })}

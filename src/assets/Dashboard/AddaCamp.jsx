@@ -16,7 +16,9 @@ const AddaCamp = () => {
             return data;
         },
         onSuccess: async (data) => {
+
             toast.success('Successfully add a camp');
+            reset();
 
 
 
@@ -127,12 +129,13 @@ const AddaCamp = () => {
                 </div>
 
                 <div>
-                    <label className="block text-white">Participant Count (starts at 0)</label>
+                    <label className="block text-white">Participant Count </label>
                     <input
                         type="number"
                         {...register('participantCount', { required: true, min: 0 })}
                         className="w-full mt-1 p-2 border border-gray-300 rounded"
                         defaultValue={0}
+                        readOnly
                     />
                     {errors.participantCount && <p className="text-red-500 text-sm mt-1">Participant Count is required and must be at least 0</p>}
                 </div>

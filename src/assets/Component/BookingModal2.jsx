@@ -46,8 +46,14 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
             return data;
         },
         onSuccess: async (data) => {
-            toast.success('Booking successful');
+            toast.success('joining successful');
+            // Update participant count
+            await axiosPublic.patch(`/bookingmodal2/${_id}`, {
+                participantCount: 1,
+            });
             setIsOpen(false);
+            refetch()
+
         },
 
     });
@@ -206,7 +212,7 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
 
                                         <div>
                                             {/* payment */}
-                                            <h1>payment</h1>
+
                                         </div>
 
                                         <button onClick={close} type="submit" className="btn my_modal_6 btn-primary w-full">Join Camp</button>
@@ -215,7 +221,7 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
 
                                     <div className="mt-4">
                                         <Button
-                                            className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
+                                            className="inline-flex items-center gap-2 rounded-md bg-[#0055B4] py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
                                             onClick={close}
                                         >
                                             Cancel

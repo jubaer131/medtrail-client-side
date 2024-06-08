@@ -51,7 +51,7 @@ const ParticipantRegisterdCard = ({ registercamp, refetch }) => {
                     {campName}
                 </td>
                 <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
-                    {campFees}
+                    $ {campFees}
                 </td>
 
                 <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>

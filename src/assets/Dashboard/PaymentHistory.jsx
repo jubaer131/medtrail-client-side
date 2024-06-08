@@ -1,3 +1,5 @@
+
+
 import { useQuery } from "@tanstack/react-query";
 import UseAxiosPublic from "../Hooks/UseAxiosPublic";
 import PaymentHistoryCard from "./PaymentHistoryCard";
@@ -5,52 +7,66 @@ import { useEffect, useState } from "react";
 
 
 const PaymentHistory = () => {
-    const [search, setsearch] = useState('')
-    const [itemperpage, setitemperpage] = useState(3)
-    const [count, setcount] = useState(1)
-    const [currentpage, setcurrentpage] = useState('')
-    const axiosPublic = UseAxiosPublic()
+    const [search, setSearch] = useState('');
+    const [itemPerPage, setItemPerPage] = useState(10);
+    const [count, setCount] = useState(1);
+    const [currentpage, setCurrentPage] = useState(1); // Initialize with default value 1
+    const axiosPublic = UseAxiosPublic();
 
-    const Numberofpage = Math.ceil(count / itemperpage)
-    const pages = [...Array(Numberofpage).keys()].map(item => item + 1)
+    const Numberofpage = Math.ceil(count / itemPerPage);
+    const pages = [...Array(Numberofpage).keys()].map(item => item + 1);
 
     const { data: history = [], isPending, refetch } = useQuery({
-        queryKey: ['history', search, currentpage, itemperpage],
-        queryFn: async () =>
-            await axiosPublic(`/paymenthistory?search=${search}&page=${currentpage}&size=${itemperpage}`)
-                .then(res => {
-                    return res.data;
-                })
+        queryKey: ['history', search, currentpage, itemPerPage],
+        queryFn: async () => {
+            const response = await axiosPublic(`/paymenthistory?search=${search}&page=${currentpage}&size=${itemPerPage}`);
+            return response.data;
+        }
     });
 
     useEffect(() => {
         fetch('http://localhost:8000/countpamenthistory')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                setcount(data.count)
+                setCount(data.count);
             })
 
-    }, [])
+    }, [currentpage])
+
+    const handlebtn = value => {
+        setCurrentPage(value);
+        refetch();
+    };
+
+    const handlePagination = value => {
+        setCurrentPage(value);
+        refetch();
+    };
 
     const handlesearch = e => {
         e.preventDefault()
-        const text = e.target.search.value
-        setsearch(text)
-        refetch()
-        e.target.reset()
+        const text = e.target.search.value;
+        setSearch(text);
+        setCurrentPage(1);
+        refetch();
+        e.target.reset();
     }
 
-    const handlebtn = value => {
-        setcurrentpage(value)
-        refetch()
-    }
-    const handlepagination = e => {
-        console.log(e)
-        setcurrentpage(e)
-        refetch()
-    }
+    const handleNext = () => {
+        if (currentpage < Numberofpage) {
+            handlePagination(currentpage + 1);
+        }
+    };
 
+    const handlePrevious = () => {
+        if (currentpage > 1) {
+            handlePagination(currentpage - 1);
+        }
+    };
+
+    if (isPending) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div>
@@ -58,7 +74,7 @@ const PaymentHistory = () => {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 justify-around">
                     <h2 className="text-2xl font-bold text-[#0055B4]">Payment History</h2>
                     <form onSubmit={handlesearch}>
-                        <div className='flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
+                        <div className='flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
                             <input
                                 className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
                                 type='text'
@@ -125,16 +141,15 @@ const PaymentHistory = () => {
                 <div className='flex justify-center mt-12'>
                     <button
                         disabled={currentpage === 1}
-                        onClick={() => handlepagination(currentpage - 1)}
-                        className='px-4 py-2 mx-1 text-gray-700 disabled:text-gray-500 capitalize bg-gray-200 rounded-md disabled:cursor-not-allowed disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:bg-blue-500  hover:text-white'>
+                        onClick={handlePrevious}
+                        className='px-4 py-2 mx-1 text-gray-700 disabled:text-gray-500 capitalize bg-gray-200 rounded-md disabled:cursor-not-allowed disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:bg-blue-500 hover:text-white'>
                         <div className='flex items-center -mx-1'>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 className='w-6 h-6 mx-1 rtl:-scale-x-100'
                                 fill='none'
                                 viewBox='0 0 24 24'
-                                stroke='currentColor'
-                            >
+                                stroke='currentColor'>
                                 <path
                                     strokeLinecap='round'
                                     strokeLinejoin='round'
@@ -159,7 +174,7 @@ const PaymentHistory = () => {
 
                     <button
                         disabled={currentpage === Numberofpage}
-                        onClick={() => handlepagination(currentpage + 1)}
+                        onClick={handleNext}
                         className='px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md hover:bg-blue-500 disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:text-white disabled:cursor-not-allowed disabled:text-gray-500'>
                         <div className='flex items-center -mx-1'>
                             <span className='mx-1'>Next</span>
@@ -169,8 +184,7 @@ const PaymentHistory = () => {
                                 className='w-6 h-6 mx-1 rtl:-scale-x-100'
                                 fill='none'
                                 viewBox='0 0 24 24'
-                                stroke='currentColor'
-                            >
+                                stroke='currentColor'>
                                 <path
                                     strokeLinecap='round'
                                     strokeLinejoin='round'

@@ -39,7 +39,7 @@ const Analytics = () => {
     };
 
     return (
-        <div className='flex justify-center h-screen mt-8'>
+        <div className='flex justify-center h-screen mt-8 md:mt-28'>
             <ResponsiveContainer width="100%" height={400}>
                 <BarChart
                     data={chartdata}
