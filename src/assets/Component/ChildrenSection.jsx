@@ -22,8 +22,8 @@ const ChildrenSection = () => {
         <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
             <div className="container p-6 mx-auto space-y-8">
                 <div className="space-y-2 text-center mb-16">
-                    <h2 className="text-3xl font-bold mb-8 text-[#355c88]">Specialized Medical Camps for children</h2>
-                    <p className="font-serif text-[16px] dark:text-gray-600 ">these camps often involve pediatric cardiologists, nurses, and other healthcare  professionals who <br /> specialize in treating CHD, ensuring that the children receive the medical care they need while also enjoying a fun and enriching camp experience.</p>
+                    <h2 className="md:text-3xl text-2xl font-bold mb-8 text-[#355c88]">Specialized Medical Camps for children</h2>
+                    <p className="font-serif text-[16px] dark:text-gray-600 p-4">these camps often involve pediatric cardiologists, nurses, and other healthcare  professionals who <br /> specialize in treating CHD, ensuring that the children receive the medical care they need while also enjoying a fun and enriching camp experience.</p>
                 </div>
                 <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-3 ">
                     {

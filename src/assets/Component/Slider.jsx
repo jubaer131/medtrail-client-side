@@ -29,14 +29,14 @@ export default function Slider() {
             >
                 <SwiperSlide>
                     <div
-                        className='w-full bg-center bg-cover h-[38rem] rounded-2xl'
+                        className='w-full bg-center bg-cover md:h-[38rem] h-[280px] rounded-2xl p-3'
                         style={{
                             backgroundImage: `url("https://i.ibb.co/kJXfPJv/irak-313-1.jpg")`,
                         }}
                     >
                         <div className='flex items-center justify-center w-full h-full'>
                             <div className='text-center'>
-                                <h1 className='text-xl font-semibold text-white lg:text-2xl'>
+                                <h1 className='text-sm font-semibold text-white lg:text-2xl'>
                                     Empowering Health: A Triumph of Success at the Annual Medical Camp
                                 </h1>
                                 <br />
@@ -47,14 +47,14 @@ export default function Slider() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className='w-full bg-center bg-cover h-[38rem] rounded-2xl'
+                        className='w-full bg-center bg-cover md:h-[38rem] h-[280px] rounded-2xl p-3'
                         style={{
                             backgroundImage: `url("https://i.ibb.co/B4dkCTB/1-2048x1365.jpg")`,
                         }}
                     >
                         <div className='flex items-center justify-center w-full h-full '>
                             <div className='text-center'>
-                                <h1 className='text-xl font-semibold text-white lg:text-2xl'>
+                                <h1 className='text-sm font-semibold text-white lg:text-2xl'>
                                     Transforming Lives: How a Medical Camp Became a Beacon of Hope and Healing"
                                 </h1>
                                 <br />
@@ -65,14 +65,14 @@ export default function Slider() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className='w-full bg-center bg-cover h-[38rem] rounded-2xl'
+                        className='w-full bg-center bg-cover md:h-[38rem] h-[280px] rounded-2xl p-3'
                         style={{
                             backgroundImage: `url("https://i.ibb.co/v47GzqX/DSC-9046-1200x630.jpg")`,
                         }}
                     >
-                        <div className='flex items-center justify-center w-full h-full '>
+                        <div className='flex items-center justify-center w-full h-full max-sm:h-[200px]'>
                             <div className='text-center'>
-                                <h1 className='text-xl font-semibold text-white lg:text-2xl'>
+                                <h1 className='text-sm font-semibold text-white lg:text-2xl'>
                                     Miracles in Motion: The Unprecedented Success Story of Our Medical Camp
                                 </h1>
                                 <br />
@@ -83,14 +83,14 @@ export default function Slider() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className='w-full bg-center bg-cover h-[38rem] rounded-2xl'
+                        className='w-full bg-center bg-cover md:h-[38rem] h-[280px] rounded-2xl p-3'
                         style={{
                             backgroundImage: `url("https://i.ibb.co/vDTyRz9/medical-team-giving-highfive-little-child-after-successful-examination-celebrating-end-appointment-m.jpg")`,
                         }}
                     >
                         <div className='flex items-center justify-center w-full h-full '>
                             <div className='text-center'>
-                                <h1 className='text-xl font-semibold text-white lg:text-2xl'>
+                                <h1 className='text-sm font-semibold text-white lg:text-2xl'>
                                     Breaking Barriers: The Remarkable Impact of Our Successful Medical Camp
                                 </h1>
                                 <br />

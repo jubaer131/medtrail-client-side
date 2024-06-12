@@ -25,7 +25,7 @@ const PaymentHistory = () => {
     });
 
     useEffect(() => {
-        fetch('http://localhost:8000/countpamenthistory')
+        fetch('https://medtrail-server.vercel.app/countpamenthistory')
             .then(res => res.json())
             .then(data => {
                 setCount(data.count);
@@ -71,12 +71,12 @@ const PaymentHistory = () => {
     return (
         <div>
             <section className="container px-4 mx-auto pt-12">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 justify-around">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 justify-around">
                     <h2 className="text-2xl font-bold text-[#0055B4]">Payment History</h2>
                     <form onSubmit={handlesearch}>
                         <div className='flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
                             <input
-                                className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
+                                className='px-6 max-sm:w-36 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
                                 type='text'
                                 name='search'
                                 placeholder='Enter Camp Name'

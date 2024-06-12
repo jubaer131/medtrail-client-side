@@ -26,7 +26,7 @@ const ManageRegisterCamp = () => {
     });
 
     useEffect(() => {
-        fetch('http://localhost:8000/countpage')
+        fetch('https://medtrail-server.vercel.app/countpage')
             .then(res => res.json())
             .then(data => {
                 setCount(data.count);
@@ -69,7 +69,7 @@ const ManageRegisterCamp = () => {
 
     return (
         <section className='container px-4 mx-auto pt-12'>
-            <div className='flex items-center gap-x-3 justify-around'>
+            <div className='md:flex items-center gap-5 justify-around'>
                 <div className="flex gap-2">
                     <h2 className='text-2xl font-bold text-[#0055B4] '>Register Camp</h2>
                 </div>
@@ -77,7 +77,7 @@ const ManageRegisterCamp = () => {
                 <form onSubmit={handleSearch}>
                     <div className='flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
                         <input
-                            className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
+                            className='px-6 py-2 max-sm:w-36 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
                             type='text'
                             name='search'
                             placeholder='Camp Name Search'

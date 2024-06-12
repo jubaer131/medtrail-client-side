@@ -21,7 +21,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                toast.success('login successful')
+                toast.success('Sign in successful')
                 navigate('/')
 
             })
@@ -62,7 +62,7 @@ const Login = () => {
                 <div
                     className='hidden bg-cover bg-center lg:block lg:w-1/2'
                     style={{
-                        backgroundImage: `url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80')`,
+                        backgroundImage: `url('https://img.freepik.com/premium-vector/profile-interface-frame-illustration_928799-38.jpg?w=826')`,
                     }}
                 ></div>
 
