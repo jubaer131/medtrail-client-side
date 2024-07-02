@@ -12,7 +12,7 @@
 
   [Client repository](https://github.com/jubaer131/medtrail-client-side.git)
 
-  [Server repository]()
+  [Server repository](https://github.com/jubaer131/medtrail-server-side.git)
 
 # Key Features:
 
