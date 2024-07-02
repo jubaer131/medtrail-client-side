@@ -10,7 +10,7 @@
 
   [Live site](https://medtrail-assignment-12-131.netlify.app)
 
-  [Client repository]()
+  [Client repository](https://github.com/jubaer131/medtrail-client-side.git)
 
   [Server repository]()
 
