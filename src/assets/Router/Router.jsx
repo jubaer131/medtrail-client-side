@@ -86,6 +86,7 @@ const router = createBrowserRouter([
                 path: 'updatemanagecamp/:id',
                 element: <OrganizerRoute><UpdateManageCamp></UpdateManageCamp></OrganizerRoute>
             },
+            
             {
                 path: 'manageregistercamp',
                 element: <OrganizerRoute><ManageRegisterCamp></ManageRegisterCamp></OrganizerRoute>

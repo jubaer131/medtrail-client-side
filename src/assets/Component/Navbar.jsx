@@ -1,6 +1,6 @@
-import { Link, } from "react-router-dom";
+import { Link, NavLink, } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
-
+import { FaTruckMedical } from "react-icons/fa6";
 
 const Navbar = () => {
 
@@ -9,9 +9,12 @@ const Navbar = () => {
 
     const options = <>
 
-        <li><Link className="text-sm font-medium max-sm:text-black" to="/">Home</Link></li>
-        <li><Link className="text-sm font-medium max-sm:text-black" to='/availablecamp'>Available Camps</Link></li>
-        <li><Link className="text-sm font-medium max-sm:text-black " to="/login">Join Us</Link></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'text-emerald-500 border border-emerald-400 hover:bg-emerald-400  hover:text-white rounded-md py-[7px] px-3 font-medium text-[17px]' : 'py-[6px] px-3 font-medium  text-emerald-500 text-[17px]'} to={'/'}>Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'border border-emerald-400 hover:bg-emerald-400 hover:text-white rounded-md py-[7px] px-3 font-medium text-[17px]' : 'py-[6px] px-3 font-medium text-[17px] text-emerald-500 '} to='/availablecamp'>Available Camps</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'border border-emerald-400 hover:bg-emerald-400 hover:text-white rounded-md py-[7px] px-3 font-medium text-[17px]' : 'py-[6px] px-3 font-medium text-[17px] text-emerald-500'} to="/login">Join Us</NavLink></li>
+
+        {/* <li><Link className="text-sm font-medium max-sm:text-black text-blue-500" to='/availablecamp'>Available Camps</Link></li>
+        <li><Link className="text-sm font-medium max-sm:text-black text-blue-500" to="/login">Join Us</Link></li> */}
     </>
 
 
@@ -19,7 +22,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar  fixed container mx-auto  bg-[#0055B4] z-10 shadow-sm text-white rounded-xl max-sm:py-0 ">
+        <div className="navbar    shadow-sm text-white rounded-xl max-sm:py-0 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,7 +32,10 @@ const Navbar = () => {
                         {options}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl font-semibold">MedTrail</a>
+                <a className="btn btn-ghost text-xl font-semibold text-emerald-500"><FaTruckMedical /> MEDTRAIL</a>
+                {/* <div>
+                    <img className="w-10 h-10 rounded-br-3xl rounded-tl-3xl rounded-tr-3xl " src="https://i.ibb.co/4TqjjKY/Blue-Black-Minimal-Simple-Corporate-Animated-Logo-2.png" alt="" />
+                </div> */}
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

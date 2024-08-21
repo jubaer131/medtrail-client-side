@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 export default function Slider() {
     return (
         <>
@@ -27,78 +28,79 @@ export default function Slider() {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide>
-                    <div
-                        className='w-full bg-center bg-cover md:h-[38rem] h-[280px] rounded-2xl p-3'
-                        style={{
-                            backgroundImage: `url("https://i.ibb.co/kJXfPJv/irak-313-1.jpg")`,
-                        }}
-                    >
-                        <div className='flex items-center justify-center w-full h-full'>
-                            <div className='text-center'>
-                                <h1 className='text-sm font-semibold text-white lg:text-2xl'>
-                                    Empowering Health: A Triumph of Success at the Annual Medical Camp
-                                </h1>
-                                <br />
+                <SwiperSlide
+                    className='bg-no-repeat bg-cover bg-center' style={{ backgroundImage: 'url(https://i.ibb.co/zJzFLvM/doctor-conducting-health-screenings-public-event-1280275-229675.jpg)' }}>
+                    <div className='flex justify-center items-center h-[600px] text-red-50 bg-black bg-opacity-50 pt-20'>
+                        <div className=' text-center'>
+                            <h1 className='font-medium text-[18px] mb-2'>WELCOME TO MEDICAL CAMP</h1>
+                            <h1 className='text-5xl px-5 font-semibold text-emerald-500'> YOUR HEALTH, OUR PRIORITY</h1>
+                            <p className='w-[70%] mx-auto mt-4 mb-7'>Providing expert care and medical services to ensure a healthier community.
+                                Join us in our mission to make healthcare accessible for everyone.</p>
 
-                            </div>
+                            {/* <Link to={'/add_spot'} className="relative px-5 py-2 font-medium text-white group hidden md:inline">
+                                <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:skew-x-[18deg]"></span>
+                                <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:-skew-x-[18deg]"></span>
+                                <span className="relative"> Get Started </span>
+                            </Link> */}
+                            <Link to='' class="relative px-5 py-2 font-medium text-white group ">
+
+                                <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-emerald-500 group-hover:bg-emerald-700 group-hover:skew-x-12"></span>
+                                <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-emerald-500 group-hover:bg-emerald-700 group-hover:-skew-x-12"></span>
+                                <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-emerald-400 -rotate-12"></span>
+                                <span class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-emerald-400 -rotate-12"></span>
+                                <span class="relative ">Join the team</span>
+
+                            </Link>
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
-                    <div
-                        className='w-full bg-center bg-cover md:h-[38rem] h-[280px] rounded-2xl p-3'
-                        style={{
-                            backgroundImage: `url("https://i.ibb.co/B4dkCTB/1-2048x1365.jpg")`,
-                        }}
-                    >
-                        <div className='flex items-center justify-center w-full h-full '>
-                            <div className='text-center'>
-                                <h1 className='text-sm font-semibold text-white lg:text-2xl'>
-                                    Transforming Lives: How a Medical Camp Became a Beacon of Hope and Healing"
-                                </h1>
-                                <br />
 
-                            </div>
+                <SwiperSlide
+                    className='bg-no-repeat bg-cover bg-center' style={{ backgroundImage: 'url(https://i.ibb.co/sHDVwgG/doctor-administering-vaccine-child-checkup-1280275-230177.jpg)' }}>
+                    <div className='flex justify-center items-center h-[600px] text-red-50 bg-black bg-opacity-50 pt-20'>
+                        <div className=' text-center'>
+                            <h1 className='font-medium text-[18px] mb-2'>WELCOME TO CHILDREN MEDICAL CAMP</h1>
+                            <h1 className='text-5xl px-5 font-semibold text-emerald-500'>YOUR HEALTH, OUR PRIORITY </h1>
+                            <p className='w-[70%] mx-auto mt-4 mb-7'>Dedicated to the health and well-being of our youngest patients.
+                                Providing specialized care, screenings, and treatments to ensure a bright and healthy future for every child.</p>
+
+                            <Link to='' class="relative px-5 py-2 font-medium text-white group ">
+
+                                <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-emerald-500 group-hover:bg-emerald-700 group-hover:skew-x-12"></span>
+                                <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-emerald-500 group-hover:bg-emerald-700 group-hover:-skew-x-12"></span>
+                                <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-emerald-400 -rotate-12"></span>
+                                <span class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-emerald-400 -rotate-12"></span>
+                                <span class="relative ">Children Event</span>
+
+                            </Link>
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
-                    <div
-                        className='w-full bg-center bg-cover md:h-[38rem] h-[280px] rounded-2xl p-3'
-                        style={{
-                            backgroundImage: `url("https://i.ibb.co/v47GzqX/DSC-9046-1200x630.jpg")`,
-                        }}
-                    >
-                        <div className='flex items-center justify-center w-full h-full max-sm:h-[200px]'>
-                            <div className='text-center'>
-                                <h1 className='text-sm font-semibold text-white lg:text-2xl'>
-                                    Miracles in Motion: The Unprecedented Success Story of Our Medical Camp
-                                </h1>
-                                <br />
+                <SwiperSlide
+                    className='bg-no-repeat bg-cover bg-center' style={{ backgroundImage: 'url(https://i.ibb.co/1ryrmbT/purple-and-white-Line-Modern-Medical-Care-Banner-landscape-3.png)' }}>
+                    <div className='flex justify-center items-center h-[600px] text-red-50 bg-black bg-opacity-50 pt-20'>
+                        <div className=' text-center'>
+                            <h1 className='font-medium text-[18px] mb-2'>OUR MISSION</h1>
+                            <h1 className='text-5xl px-5 font-semibold text-emerald-500'> HEALTH THROUGH COMPASSIONATE CARE</h1>
+                            <p className='w-[70%] mx-auto mt-4 mb-7'>At the heart of our mission lies a deep commitment to empowering individuals and communities by providing accessible healthcare with compassion and integrity.</p>
 
-                            </div>
+                            <Link to='' class="relative px-5 py-2 font-medium text-white group ">
+
+                                <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-emerald-500 group-hover:bg-emerald-700 group-hover:skew-x-12"></span>
+                                <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-emerald-500 group-hover:bg-emerald-700 group-hover:-skew-x-12"></span>
+                                <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-emerald-400 -rotate-12"></span>
+                                <span class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-emerald-400 -rotate-12"></span>
+                                <span class="relative ">Read More</span>
+
+                            </Link>
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
-                    <div
-                        className='w-full bg-center bg-cover md:h-[38rem] h-[280px] rounded-2xl p-3'
-                        style={{
-                            backgroundImage: `url("https://i.ibb.co/vDTyRz9/medical-team-giving-highfive-little-child-after-successful-examination-celebrating-end-appointment-m.jpg")`,
-                        }}
-                    >
-                        <div className='flex items-center justify-center w-full h-full '>
-                            <div className='text-center'>
-                                <h1 className='text-sm font-semibold text-white lg:text-2xl'>
-                                    Breaking Barriers: The Remarkable Impact of Our Successful Medical Camp
-                                </h1>
-                                <br />
 
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
+
+
+
+
 
             </Swiper>
         </>

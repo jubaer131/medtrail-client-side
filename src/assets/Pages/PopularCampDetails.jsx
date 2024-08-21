@@ -29,6 +29,7 @@ const PopularCampDetails = () => {
 
 
     })
+    
     if (isPending) return <div>Loading...</div>;
 
     const { campName, dateAndTime, image,
