@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import UseAxiosPublic from "../Hooks/UseAxiosPublic";
 import { useState } from "react";
 import CampCard from "./CampCard";
-
+import { PropagateLoader } from 'react-spinners';
 
 const PopularMedicalCamp = () => {
 
@@ -19,7 +19,8 @@ const PopularMedicalCamp = () => {
 
 
     })
-    if (isPending) return <div>Loading...</div>;
+    if (isPending) return <PropagateLoader color="#36d7b7" />;
+
     const handleSeeAll = () => {
         setVisibleCamps(camps.length); // Show all camps
     };

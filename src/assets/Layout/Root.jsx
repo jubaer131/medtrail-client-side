@@ -1,5 +1,4 @@
 import { Outlet, useNavigation } from "react-router-dom";
-import Navbar from "../Component/Navbar";
 import Footer from "../Component/Footer";
 
 
@@ -7,17 +6,15 @@ import Footer from "../Component/Footer";
 const Root = () => {
     return (
         <div className="w-full relative mx-auto" style={{ fontFamily: "Signika" }}>
-            <div className=" mx-auto">
-                <div className="absolute w-full z-50">
-                    <Navbar></Navbar>
-                </div>
 
-                <div >
-                    <Outlet />
-                </div>
+            {/* <div className="absolute w-full z-50">
+                <Navbar></Navbar>
+            </div> */}
+            <div className="">
+                <Outlet />
             </div>
 
-            <div className="">
+            <div >
                 <Footer></Footer>
             </div>
 

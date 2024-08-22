@@ -1,5 +1,5 @@
 
-
+import Navbar from '../Component/Navbar';
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import UseAxiosPublic from '../Hooks/UseAxiosPublic';
@@ -41,11 +41,14 @@ const AvailableCamp = () => {
 
 
     return (
-        <div className='container px-6 py-10 mx-auto min-h-[calc(100vh-306px)] flex flex-col justify-between'>
+        <div className=' px-6 py-10 mx-auto  '>
             <Helmet>
                 <title>Available Camp</title>
             </Helmet>
-            <div>
+            <div className='max-w-6xl mx-auto'>
+                <Navbar></Navbar>
+            </div>
+            <div className='max-w-6xl mx-auto my-10'>
                 <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
                     <form onSubmit={handleSearch}>
                         <div className='flex p-1  overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
