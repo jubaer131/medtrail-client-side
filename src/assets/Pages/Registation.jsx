@@ -9,6 +9,7 @@ import { GoogleAuthProvider } from "firebase/auth/web-extension";
 import Swal from "sweetalert2";
 import UseAxiosPublic from "../Hooks/UseAxiosPublic";
 import { Helmet } from "react-helmet";
+import Navbar from "../Component/Navbar";
 
 
 
@@ -43,7 +44,7 @@ const Registation = () => {
 
                                     reset();
                                     Swal.fire({
-                                        position: 'top-end',
+                                        position: 'top-middle',
                                         icon: 'success',
                                         title: 'SignUp Successfull.',
                                         showConfirmButton: false,
@@ -83,16 +84,18 @@ const Registation = () => {
 
     return (
         <>
-
+            <div>
+                <Navbar></Navbar>
+            </div>
             <div className='flex justify-center items-center min-h-[calc(100vh-306px)]'>
                 <Helmet>
                     <title>Sign up</title>
                 </Helmet>
-                <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
+                <div className='flex w-full  mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-7xl '>
                     <div
-                        className='hidden bg-cover bg-center lg:block lg:w-1/2'
+                        className='hidden bg-cover  bg-center lg:block lg:w-2/4'
                         style={{
-                            backgroundImage: `url('https://img.freepik.com/free-vector/access-control-system-abstract-concept_335657-3180.jpg?t=st=1717853176~exp=1717856776~hmac=d141c2ce9083eeacbaad1894f93756d853625309fbff65a7a240fdeb30126028&w=826')`,
+                            backgroundImage: `url('https://i.ibb.co/R4Gf75c/account-is-locked-118167-5913.jpg')`,
                         }}
                     ></div>
 
@@ -100,7 +103,7 @@ const Registation = () => {
                         <div className='flex justify-center mx-auto'>
                             <img
                                 className='w-auto h-7 sm:h-8'
-                                src='https://merakiui.com/images/logo.svg'
+                                src='https://i.ibb.co/R4Gf75c/account-is-locked-118167-5913.jpg'
                                 alt=''
                             />
                         </div>
@@ -173,7 +176,8 @@ const Registation = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn bg-[#0055B4] text-white" type="submit" value="Sign Up" />
+                                <input className="btn bg-emerald-400 text-white" type="submit" value="Sign Up" />
+
                             </div>
                         </form>
 
@@ -190,8 +194,8 @@ const Registation = () => {
                             <span className='w-1/5 border-b  md:w-1/4'></span>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div >
+            </div >
         </>
     );
 };

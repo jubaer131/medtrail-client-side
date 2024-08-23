@@ -1,18 +1,35 @@
-import { Outlet, useNavigation } from "react-router-dom";
+import { Outlet, useLocation, useNavigation } from "react-router-dom";
 import Footer from "../Component/Footer";
+import { PuffLoader } from "react-spinners";
+
+
 
 
 
 const Root = () => {
+
+    const location = useLocation();
+    const navigation = useNavigation();
     return (
         <div className="w-full relative mx-auto" style={{ fontFamily: "Signika" }}>
 
-            {/* <div className="absolute w-full z-50">
-                <Navbar></Navbar>
-            </div> */}
-            <div className="">
+
+            {/* <div className="">
                 <Outlet />
-            </div>
+            </div> */}
+
+            {navigation.state === "loading" ? (
+                <div className="w-full h-96 flex items-center justify-center">
+                    {" "}
+                    <PuffLoader color="green-500" size={70}></PuffLoader>{" "}
+                </div>
+            ) : (
+
+                <div className="">
+                    <Outlet />
+                </div>
+
+            )}
 
             <div >
                 <Footer></Footer>

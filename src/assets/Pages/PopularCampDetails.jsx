@@ -8,7 +8,7 @@ import UseAxiosPublic from "../Hooks/UseAxiosPublic";
 import { FaLocationDot, FaUserDoctor } from "react-icons/fa6";
 import { useState } from "react";
 import BookingModal from "../Component/BookingModal";
-import { PropagateLoader } from 'react-spinners';
+import { PropagateLoader, PuffLoader } from 'react-spinners';
 import Navbar from "../Component/Navbar";
 import { MdOutlineDateRange } from "react-icons/md";
 
@@ -32,7 +32,6 @@ const PopularCampDetails = () => {
 
     })
 
-    if (isPending) return <PropagateLoader color="green" />;
 
     const { campName, dateAndTime, image,
         campFees,
@@ -53,6 +52,7 @@ const PopularCampDetails = () => {
 
 
 
+    if (isPending) return <PuffLoader color="#36d7b7" size={70}></PuffLoader>;
 
 
     return (
@@ -64,7 +64,7 @@ const PopularCampDetails = () => {
 
             <div className="card lg:card-side bg-base-100  gap-6 px-8 mt-10 container mx-auto my-8 shadow-2xl shadow-emerald-500">
                 <div className="lg:w-6/12 ">
-                    <figure><img className="w-full lg:h-[650px] bg-cover bg-no-repeat rounded-3xl" src={image} alt="Album" /></figure>
+                    <figure><img className="w-full lg:h-[650px] bg-cover py-8  bg-no-repeat rounded-full" src={image} alt="Album" /></figure>
                 </div>
 
                 <div className=" lg:w-6/12 p-6">

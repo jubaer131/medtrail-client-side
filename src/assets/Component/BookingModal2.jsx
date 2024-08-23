@@ -6,6 +6,7 @@ import { useMutation } from '@tanstack/react-query';
 import UseAxiosPublic from '../Hooks/UseAxiosPublic';
 import { toast } from 'react-toastify';
 import UseAuth from '../Hooks/UseAuth';
+import { BiLogOutCircle } from 'react-icons/bi';
 
 const BookingModal2 = ({ availablecamp, refetch }) => {
 
@@ -103,12 +104,18 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
 
     return (
         <>
-            <Button
+            {/* <Button
                 onClick={open}
                 className="rounded-md bg-sky-500 mt-5 py-2 px-4 text-sm font-medium text-white focus:outline-none data-[hover]:bg-black/30 data-[focus]:outline-1 data-[focus]:outline-white"
             >
                 Join Camp
-            </Button>
+            </Button> */}
+            <button onClick={open} className="relative px-5 py-2 font-medium  group  md:inline mt-5 pl-4">
+                <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:skew-x-[18deg]"></span>
+                <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:-skew-x-[18deg]"></span>
+
+                <span className="flex items-center gap-2 relative"><BiLogOutCircle className="text-xl"></BiLogOutCircle> Join Camp</span>
+            </button>
 
             <Transition appear show={isOpen}>
                 <Dialog as="div" className="relative z-10 focus:outline-none" onClose={close}>
@@ -122,7 +129,7 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
                                 leaveFrom="opacity-100 transform-[scale(100%)]"
                                 leaveTo="opacity-0 transform-[scale(95%)]"
                             >
-                                <DialogPanel className="w-full max-w-md rounded-xl bg-white p-6 ">
+                                <DialogPanel className="w-full max-w-lg rounded-xl bg-white p-8 border-2 border-emerald-200 shadow-2xl ">
                                     <DialogTitle as="h3" className="text-base/7 font-medium text-white">
 
                                     </DialogTitle>
@@ -132,31 +139,31 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
                                         <div className='flex gap-5'>
                                             <div>
                                                 <label className="block mb-2 font-medium">Camp Name</label>
-                                                <input type="text" readOnly className="w-full p-2 border rounded" defaultValue={campName} />
+                                                <input type="text" readOnly className=" w-full lg:w-[220px] p-2 border rounded" defaultValue={campName} />
                                             </div>
                                             <div>
                                                 <label className="block mb-2 font-medium">Camp Fees</label>
-                                                <input type="text" readOnly className="w-full p-2 border rounded" defaultValue={campFees} />
+                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2 border rounded" defaultValue={campFees} />
                                             </div>
                                         </div>
                                         <div className='flex gap-5'>
                                             <div>
                                                 <label className="block mb-2 font-medium">Location</label>
-                                                <input type="text" readOnly className="w-full p-2 border rounded" defaultValue={location} />
+                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2 border rounded" defaultValue={location} />
                                             </div>
                                             <div>
-                                                <label className="block mb-2 font-medium">Healthcare Professional</label>
-                                                <input type="text" readOnly className="w-full p-2 border rounded" defaultValue={healthcareProfessional} />
+                                                <label className="block mb-2 font-medium">Doctor</label>
+                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2 border rounded" defaultValue={healthcareProfessional} />
                                             </div>
                                         </div>
                                         <div className='flex gap-5'>
                                             <div>
-                                                <label className="block mb-2 font-medium">Participent Name</label>
-                                                <input type="text" readOnly className="w-full p-2 border rounded" defaultValue={user?.displayName} />
+                                                <label className="block mb-2 font-medium"> Name</label>
+                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2 border rounded" defaultValue={user?.displayName} />
                                             </div>
                                             <div>
-                                                <label className="block mb-2 font-medium">Partcipent Email</label>
-                                                <input type="text" readOnly className="w-full p-2 border rounded" defaultValue={user?.email} />
+                                                <label className="block mb-2 font-medium"> Email</label>
+                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2 border rounded" defaultValue={user?.email} />
                                             </div>
                                         </div>
 
@@ -168,7 +175,7 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
                                                     name="age"
 
                                                     required
-                                                    className="w-full p-2 border rounded"
+                                                    className="w-full lg:w-[220px] p-2 border rounded"
                                                 />
                                             </div>
                                             <div>
@@ -178,7 +185,7 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
                                                     name="phoneNumber"
 
                                                     required
-                                                    className="w-full p-2 border rounded"
+                                                    className="w-full lg:w-[220px] p-2 border rounded"
                                                 />
                                             </div>
                                         </div>
@@ -189,7 +196,7 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
                                                 value={gender} // Set the 'value' attribute to the selected gender state
                                                 onChange={handleChange} // Call the handleChange function when the selection changes
                                                 required
-                                                className="w-full p-2 border rounded"
+                                                className="w-full  p-2 border rounded"
                                             >
                                                 <option value="">Select Gender</option>
                                                 <option value="Male">Male</option>
@@ -205,7 +212,7 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
                                                 name="emergencyContact"
 
                                                 required
-                                                className="w-full p-2 border rounded"
+                                                className="w-full  p-2 border rounded"
                                             />
                                         </div>
 
@@ -215,17 +222,17 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
 
                                         </div>
 
-                                        <button onClick={close} type="submit" className="btn my_modal_6 btn-primary w-full">Join Camp</button>
+                                        <button onClick={close} type="submit" className="btn my_modal_6 bg-emerald-400 w-full">Join Camp</button>
                                     </form>
 
 
                                     <div className="mt-4">
-                                        <Button
+                                        {/* <Button
                                             className="inline-flex items-center gap-2 rounded-md bg-[#0055B4] py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
                                             onClick={close}
                                         >
                                             Cancel
-                                        </Button>
+                                        </Button> */}
                                     </div>
                                 </DialogPanel>
                             </TransitionChild>

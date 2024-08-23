@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { IoLocationSharp } from "react-icons/io5";
 import { BsCalendarDate } from "react-icons/bs";
-import { FaUserDoctor } from "react-icons/fa6";
+import { FaMonument, FaUserDoctor } from "react-icons/fa6";
 import { MdSupervisorAccount } from "react-icons/md";
 
 const CampCard = ({ camp }) => {
@@ -27,7 +27,8 @@ const CampCard = ({ camp }) => {
                 <p className='flex  items-center gap-3'> <BsCalendarDate className='text-[16px] text-emerald-500' /> {dateAndTime}</p>
 
                 <div className="divider divider-start"></div>
-                <p className='flex  items-center gap-3'> <MdSupervisorAccount className='text-xl text-emerald-600' /> Participant Count : {participantCount}</p>
+                {/* <p className='flex  items-center gap-3'> <MdSupervisorAccount className='text-xl text-emerald-600' /> Participant Count : {participantCount}</p> */}
+                <h2 className="text-[20px] font-medium flex justify-start items-center gap-4">  <FaMonument className="text-emerald-400"> </FaMonument>  Participant : <div className="badge badge-lg text-emerald-400">{participantCount}</div>  </h2>
             </div>
             <div className="flex flex-wrap justify-between">
                 {/* <div className="space-x-2">

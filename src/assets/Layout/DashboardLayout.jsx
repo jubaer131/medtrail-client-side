@@ -57,7 +57,7 @@ const DashboardLayout = () => {
 
             {/* Sidebar */}
             <div
-                className={`bg-[#0055B4] text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+                className={`bg-gradient-to-b from-emerald-700 to-lime-800 overflow-hidden text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
                     } md:relative md:translate-x-0 transition duration-200 ease-in-out`}
             >
                 {/* Sidebar content */}

@@ -148,31 +148,31 @@ const BookingModal = ({ campdetails, refetch }) => {
                                         <div className='flex gap-5'>
                                             <div>
                                                 <label className="block mb-2 font-medium ">Camp Name</label>
-                                                <input type="text" readOnly className="w-[220px] p-2 border rounded" defaultValue={campName} />
+                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2 border rounded" defaultValue={campName} />
                                             </div>
                                             <div>
                                                 <label className="block mb-2 font-medium">Camp Fees</label>
-                                                <input type="text" readOnly className="w-[220px]  p-2 border rounded" defaultValue={campFees} />
+                                                <input type="text" readOnly className="w-full lg:w-[220px]  p-2 border rounded" defaultValue={campFees} />
                                             </div>
                                         </div>
                                         <div className='flex gap-5'>
                                             <div>
                                                 <label className="block mb-2 font-medium">Location</label>
-                                                <input type="text" readOnly className="w-[220px] p-2 border rounded" defaultValue={location} />
+                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2 border rounded" defaultValue={location} />
                                             </div>
                                             <div>
-                                                <label className="block mb-2 font-medium">Healthcare Professional</label>
-                                                <input type="text" readOnly className="w-[220px] p-2 border rounded" defaultValue={healthcareProfessional} />
+                                                <label className="block mb-2 font-medium">Doctor</label>
+                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2 border rounded" defaultValue={healthcareProfessional} />
                                             </div>
                                         </div>
                                         <div className='flex gap-5'>
                                             <div>
-                                                <label className="block mb-2 font-medium">Participent Name</label>
-                                                <input type="text" readOnly className="w-[220px] p-2 border rounded" defaultValue={user?.displayName} />
+                                                <label className="block mb-2 font-medium"> Name</label>
+                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2 border rounded" defaultValue={user?.displayName} />
                                             </div>
                                             <div>
-                                                <label className="block mb-2 font-medium">Partcipent Email</label>
-                                                <input type="text" readOnly className="w-[220px] p-2 border rounded" defaultValue={user?.email} />
+                                                <label className="block mb-2 font-medium"> Email</label>
+                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2 border rounded" defaultValue={user?.email} />
                                             </div>
                                         </div>
 
@@ -184,7 +184,7 @@ const BookingModal = ({ campdetails, refetch }) => {
                                                     name="age"
 
                                                     required
-                                                    className="w-[220px] p-2 border rounded"
+                                                    className="w-full lg:w-[220px] p-2 border rounded"
                                                 />
                                             </div>
                                             <div>
@@ -194,7 +194,7 @@ const BookingModal = ({ campdetails, refetch }) => {
                                                     name="phoneNumber"
 
                                                     required
-                                                    className="w-[220px] p-2 border rounded"
+                                                    className="w-full lg:w-[220px] p-2 border rounded"
                                                 />
                                             </div>
                                         </div>

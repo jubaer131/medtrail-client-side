@@ -10,16 +10,18 @@ const OrganizerProfile = () => {
     const [item, isLoading] = UseOrganizer()
     console.log(item)
     return (
-        <div>
-            <div className='flex justify-center items-center '>
+        <div className="bg-cover bg-[url('https://t4.ftcdn.net/jpg/07/38/89/95/360_F_738899524_T8SC7kJe1znXkzulgcYoKsMKiYSHI8fk.jpg')]">
 
-                <div className='bg-white shadow-lg rounded-2xl w-4/5'>
-                    <img
+            <div className='flex justify-center items-center min-h-screen '>
+
+
+                <div className=' shadow-lg rounded-2xl w-3/5 bg-white'>
+                    {/* <img
                         alt='profile'
                         src='https://img.freepik.com/premium-photo/xmas-blue-layout-with-frame-turquoise-purple-stars-with-carved-them-deers-christmas-trees-snowflakes-stars_121867-538.jpg?w=1380'
-                        className='w-full mb-4 rounded-t-lg md:h-[350px]'
-                    />
-                    <div className='flex flex-col items-center justify-center p-4 h-[400px] -mt-16'>
+                        className='w-full   mb-4  md:h-[350px]'
+                    /> */}
+                    <div className='flex flex-col items-center justify-center p-4 h-[400px] mt-8'>
                         <a href='#' className='relative block'>
                             <img
                                 alt='profile'
@@ -65,3 +67,5 @@ const OrganizerProfile = () => {
 };
 
 export default OrganizerProfile;
+
+
