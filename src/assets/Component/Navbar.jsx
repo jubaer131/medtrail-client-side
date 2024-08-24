@@ -1,11 +1,12 @@
 import { Link, NavLink, } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import { FaTruckMedical } from "react-icons/fa6";
+import UseOrganizer from "../Hooks/UseOrganizer";
 
 const Navbar = () => {
 
     const { user, logOut } = UseAuth()
-
+    const [item, isLoading] = UseOrganizer()
 
     const options = <>
 
@@ -55,7 +56,10 @@ const Navbar = () => {
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 
                                 <li className="text-black font-semibold"><a>{user.displayName}</a></li>
-                                <li className="text-black font-semibold"><Link to='/dashboard'>Dashboard</Link></li>
+                                {
+                                    item.role === 'admin' ? <>  <li className="text-black font-semibold"><Link to='/dashboard/organizerprofile'>Dashboard</Link></li></> : <> <li className="text-black font-semibold"><Link to='/dashboard/participantprofile'>Dashboard</Link></li>W</>
+                                }
+
                                 <li className="text-black font-semibold"><button onClick={logOut}>Logout</button></li>
 
                             </ul>

@@ -24,7 +24,6 @@ const AvailableCampCard = ({ camp }) => {
                     <p className="text-sm dark:text-gray-600 flex items-center gap-3 "><FaLocationDot className="text-emerald-400" /> {location}.</p>
                     <p className="flex items-center gap-3 "> <FaUserDoctor className="text-emerald-400" /> {healthcareProfessional}</p>
                     <p>  {dateAndTime}</p>
-                    {/* <p className="flex items-center gap-3"><MdSupervisorAccount className="text-emerald-400" /> participant : {participantCount}</p> */}
 
                     <h2 className="text-[20px] font-medium flex justify-start items-center gap-4">  <FaMonument className="text-emerald-400"> </FaMonument>  Participant : <div className="badge badge-lg text-emerald-400">{participantCount}</div>  </h2>
                 </div>

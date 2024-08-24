@@ -39,8 +39,8 @@ const Analytics = () => {
     };
 
     return (
-        <div className='flex justify-center h-screen mt-8 md:mt-28'>
-            <ResponsiveContainer width="100%" height={400}>
+        <div className='flex justify-center h-screen mt-8 md:mt-20'>
+            <ResponsiveContainer width="95%" height={700}>
                 <BarChart
                     data={chartdata}
                     margin={{

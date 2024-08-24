@@ -14,6 +14,7 @@ import { FcManager } from "react-icons/fc";
 import { FaRegistered } from "react-icons/fa6";
 import { Helmet } from 'react-helmet';
 import UseAuth from '../Hooks/UseAuth';
+
 const DashboardLayout = () => {
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -33,6 +34,7 @@ const DashboardLayout = () => {
             <Helmet>
                 <title>Dashboard</title>
             </Helmet>
+
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex justify-between items-center bg-gray-800 text-white px-4 py-3">

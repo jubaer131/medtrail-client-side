@@ -68,21 +68,21 @@ const ManageCamp = () => {
     }
 
     return (
-        <section className='container px-4 mx-auto pt-12 min-h-screen'>
-            <div className='md:flex items-center justify-around mb-8 gap-5'>
-                <h2 className='text-2xl font-bold text-[#0055B4] '>Manage Camp</h2>
+        <section className='max-w-6xl px-4 mx-auto pt-5  border border-lime-400 bg-lime-200 rounded-3xl'>
+            <div className='md:flex items-center justify-between mb-8 px-4'>
+                <h2 className='text-2xl font-bold text-lime-500 '>Manage Camp</h2>
 
                 {/* search bar */}
                 <form onSubmit={handleSearch}>
                     <div className='flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
                         <input
-                            className='px-6 py-2 max-sm:w-36 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
+                            className='px-6 py-2 max-sm:w-36 w-[350px] text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
                             type='text'
                             name='search'
                             placeholder='Enter Camp Name'
                             aria-label='Enter Job Title'
                         />
-                        <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-[#0055B4] rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
+                        <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-lime-500 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
                             Search
                         </button>
                     </div>
@@ -130,7 +130,7 @@ const ManageCamp = () => {
                 </div>
             </div>
 
-            <div className='flex justify-center mt-12'>
+            <div className='flex justify-center my-12 '>
                 <button
                     disabled={currentPage === 1}
                     onClick={handlePrevious}
@@ -157,7 +157,7 @@ const ManageCamp = () => {
                     <button
                         onClick={() => handleBtn(btnNum)}
                         key={btnNum}
-                        className={` ${currentPage === btnNum ? 'bg-blue-500' : 'bg-white'} px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline hover:bg-blue-500 hover:text-white`}
+                        className={` ${currentPage === btnNum ? 'bg-lime-500' : 'bg-white'} px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline hover:bg-lime-500 hover:text-white`}
                     >
                         {btnNum}
                     </button>

@@ -60,7 +60,7 @@ const ParticipantRegisterdCard = ({ registercamp, refetch }) => {
                 </td>
                 {/* payment setap */}
                 <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
-                    {PaymentStatus === 'Pay' ? <Link to={`/dashboard/payment/${_id}`}><button className="text-yellow-500 btn">Pay</button></Link> : <p className=" text-green-500">Paid</p>
+                    {PaymentStatus === 'Pay' ? <Link to={`/dashboard/payment/${_id}`}><button className="text-yellow-500 btn rounded-full">Pay</button></Link> : <p className=" text-green-500">Paid</p>
 
 
                     }
@@ -71,7 +71,7 @@ const ParticipantRegisterdCard = ({ registercamp, refetch }) => {
                 </td>
                 <td className='px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap'>
                     {
-                        PaymentStatus === 'paid' && confirmationStatus === 'Confirmed' ? <h2><RiDeleteBin5Line className="text-xl text-red-400"></RiDeleteBin5Line></h2> : <button onClick={() => handleDeleteRegistation(_id)} className="btn"><RiDeleteBin5Line className="text-xl text-green-400"></RiDeleteBin5Line></button>
+                        PaymentStatus === 'paid' && confirmationStatus === 'Confirmed' ? <h2><RiDeleteBin5Line className="text-xl text-red-400"></RiDeleteBin5Line></h2> : <button onClick={() => handleDeleteRegistation(_id)} className="btn rounded-full"><RiDeleteBin5Line className="text-xl text-green-400"></RiDeleteBin5Line></button>
 
                     }
                 </td>

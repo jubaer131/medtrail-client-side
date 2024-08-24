@@ -136,7 +136,7 @@ const ChackoutForm = ({ id }) => {
                     },
                 }}
             />
-            <button className="btn btn-primary btn-sm mt-3" type="submit" >
+            <button className="btn bg-lime-400 btn-sm mt-3" type="submit" >
                 Pay
             </button>
             <p className="text-red-600">{error}</p>

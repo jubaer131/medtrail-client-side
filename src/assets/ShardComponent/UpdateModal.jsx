@@ -30,10 +30,10 @@ const UpdateModal = () => {
                 Update Profile
             </button>
             <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
-                <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-                    <DialogPanel className=" space-y-4 border bg-white p-12">
-                        <DialogTitle className="font-bold">Update Profile</DialogTitle>
-                        <Description>You can update your profile from here</Description>
+                <div className="fixed inset-0 flex w-screen items-center justify-center p-4 ">
+                    <DialogPanel className=" space-y-4  bg-lime-100 p-12 border border-lime-100 rounded-3xl">
+                        <DialogTitle className="font-bold text-2xl text-center">Update Profile</DialogTitle>
+                        <Description className="text-center ">You can update your profile from here</Description>
                         <form onSubmit={handleSubmit(onSubmit)} className=" md:w-[450px] mx-auto md:mt-10 mt-4 p-6 border border-gray-300 rounded-lg shadow-lg flex flex-col justify-center box-border">
                             <div className="mb-4">
                                 <label className="block text-sm font-medium text-gray-700">
@@ -42,7 +42,7 @@ const UpdateModal = () => {
                                         defaultValue={user?.displayName}
                                         type="text"
                                         {...register('name', { required: true })}
-                                        className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                        className="mt-1 px-4 py-4 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                                     />
                                     {errors.name && <span className="text-red-500 text-xs mt-1">This field is required</span>}
                                 </label>
@@ -55,7 +55,7 @@ const UpdateModal = () => {
                                         type="email"
                                         readOnly
                                         {...register('email', { required: true })}
-                                        className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                        className="mt-1 px-4 py-4 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                                     />
                                     {errors.email && <span className="text-red-500 text-xs mt-1">This field is required</span>}
                                 </label>
@@ -67,33 +67,23 @@ const UpdateModal = () => {
                                         defaultValue={user?.photoURL}
                                         type="url"
                                         {...register('photoURL')}
-                                        className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                        className="mt-1 px-4 py-4 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                                     />
                                 </label>
                             </div>
-                            {/* Uncomment this section if you need to update phone number
-                            <div className="mb-4">
-                                <label className="block text-sm font-medium text-gray-700">
-                                    Phone Number:
-                                    <input
-                                        defaultValue={user?.phoneNumber}
-                                        type="tel"
-                                        {...register('phoneNumber')}
-                                        className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                                    />
-                                    {errors.phoneNumber && <span className="text-red-500 text-xs mt-1">This field is required</span>}
-                                </label>
-                            </div>
-                            */}
-                            <button type="submit" className="mt-4 p-2 w-full bg-blue-600 text-white rounded-md hover:bg-blue-700">
+
+                            {/* <button type="submit" className="mt-4 p-2 w-full bg-lime-500 text-white rounded-md hover:bg-lime-600">
                                 Update
+                            </button> */}
+                            <button type="submit" class="relative px-5 py-2 font-medium text-white group">
+                                <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-lime-500 group-hover:bg-lime-700 group-hover:skew-x-12"></span>
+                                <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-lime-700 group-hover:bg-lime-500 group-hover:-skew-x-12"></span>
+                                <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-lime-600 -rotate-12"></span>
+                                <span class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-lime-400 -rotate-12"></span>
+                                <span class="relative">Update</span>
                             </button>
                         </form>
-                        <div className="flex gap-4 mt-4">
-                            <button onClick={() => setIsOpen(false)} className="p-2 bg-gray-600 text-white rounded-md hover:bg-gray-700">
-                                Cancel
-                            </button>
-                        </div>
+
                     </DialogPanel>
                 </div>
             </Dialog>
