@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { FaLocationDot, FaMonument } from "react-icons/fa6";
 import { FaUserDoctor } from "react-icons/fa6";
-import { MdSupervisorAccount } from "react-icons/md";
 import { BiLogOutCircle } from "react-icons/bi";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
+
+
 const AvailableCampCard = ({ camp }) => {
 
     const {
@@ -14,18 +18,24 @@ const AvailableCampCard = ({ camp }) => {
         _id
     } = camp
 
+    useEffect(() => {
+        AOS.init({
+            duration: 1200, // Animation duration
+        });
+    }, []);
+
     return (
         <div>
-            <div className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-emerald-50 dark:text-gray-800">
+            <div data-aos="zoom-out-left" className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-emerald-50 dark:text-gray-800">
 
                 <div className='space-y-4'>
                     <img src={image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
-                    <h2 className="mb-1 text-xl font-semibold">{campName}</h2>
-                    <p className="text-sm dark:text-gray-600 flex items-center gap-3 "><FaLocationDot className="text-emerald-400" /> {location}.</p>
-                    <p className="flex items-center gap-3 "> <FaUserDoctor className="text-emerald-400" /> {healthcareProfessional}</p>
+                    <h2 className="mb-1 text-xl text-gray-900 font-semibold">{campName}</h2>
+                    <p className="text-sm text-gray-900 flex items-center gap-3 "><FaLocationDot className="text-emerald-400" /> {location}.</p>
+                    <p className="flex items-center gap-3 text-gray-900 "> <FaUserDoctor className="text-emerald-400" /> {healthcareProfessional}</p>
                     <p>  {dateAndTime}</p>
 
-                    <h2 className="text-[20px] font-medium flex justify-start items-center gap-4">  <FaMonument className="text-emerald-400"> </FaMonument>  Participant : <div className="badge badge-lg text-emerald-400">{participantCount}</div>  </h2>
+                    <h2 className="text-[20px] text-gray-900 font-medium flex justify-start items-center gap-4">  <FaMonument className="text-emerald-400"> </FaMonument>  Participant : <div className="badge badge-lg bg-emerald-50 text-emerald-400">{participantCount}</div>  </h2>
                 </div>
                 <div className="flex flex-wrap justify-between">
                     <div className="space-x-2">
@@ -33,7 +43,7 @@ const AvailableCampCard = ({ camp }) => {
                             <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:skew-x-[18deg]"></span>
                             <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:-skew-x-[18deg]"></span>
 
-                            <span className="flex items-center gap-2 relative"><BiLogOutCircle className="text-xl"></BiLogOutCircle> Details</span>
+                            <span className="flex items-center gap-2 relative text-gray-900"><BiLogOutCircle className="text-xl"></BiLogOutCircle> Details</span>
                         </button></Link>
 
                     </div>

@@ -57,7 +57,7 @@ const DetailsAvailableCamp = () => {
         setGender(e.target.value);
     };
 
-    if (isPending) return <PuffLoader color="green-500" size={70}></PuffLoader>
+    if (isPending) return <div className="w-full h-[660px] flex items-center justify-center"> <PuffLoader color="orange" size={70}></PuffLoader> </div>
 
 
 
@@ -74,7 +74,7 @@ const DetailsAvailableCamp = () => {
 
                     <div className=" lg:w-6/12 p-6">
                         <div className="  mx-auto space-y-16 ">
-                            <article className="space-y-4  text-black">
+                            <article className="space-y-4  ">
                                 <div className="space-y-6">
                                     <h1 className="text-3xl font-semibold md:tracking-tight md:text-4xl">{campName}</h1>
                                     <h2 className="text-[20px] font-medium flex items-center gap-3"><IoLocationSharp className="text-emerald-400" />  {location}</h2>

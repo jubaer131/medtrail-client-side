@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="px-4 py-10   text-white relative bg-gradient-to-b from-emerald-600 to-lime-800 overflow-hidden">
+        <footer className="px-4 py-10 relative  text-white  bg-gradient-to-b from-emerald-600 to-lime-800 overflow-hidden">
 
-            <div class="relative z-10 text-end p-12">
-            </div>
-            <div class="absolute inset-0 z-0">
+
+            <div className="area">
                 <ul class="circles">
                     <li class="w-20 h-20 bg-white/20 rounded-full animate-circle1"></li>
                     <li class="w-5 h-5 bg-white/20 rounded-full animate-circle2"></li>
@@ -22,6 +21,7 @@ const Footer = () => {
                     <li class="w-36 h-36 bg-white/20 rounded-full animate-circle10"></li>
                 </ul>
             </div>
+
 
             <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
                 <div className="lg:w-1/3">

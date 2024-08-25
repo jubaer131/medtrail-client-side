@@ -1,7 +1,7 @@
 
 
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigation } from 'react-router-dom';
 import UseOrganizer from '../Hooks/UseOrganizer';
 import { ImProfile } from "react-icons/im";
 import { SiGoogleanalytics } from "react-icons/si";
@@ -14,13 +14,14 @@ import { FcManager } from "react-icons/fc";
 import { FaRegistered } from "react-icons/fa6";
 import { Helmet } from 'react-helmet';
 import UseAuth from '../Hooks/UseAuth';
+import { PuffLoader } from 'react-spinners';
 
 const DashboardLayout = () => {
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     const [item, isLoading] = UseOrganizer()
-
+    const navigation = useNavigation()
     const { user, logOut } = UseAuth()
 
     const toggleSidebar = () => {
@@ -57,11 +58,13 @@ const DashboardLayout = () => {
                 </button>
             </div>
 
+
             {/* Sidebar */}
             <div
-                className={`bg-gradient-to-b from-emerald-700 to-lime-800 overflow-hidden text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+                className={`bg-gradient-to-b from-[#1f7326] to-[#17721f] overflow-hidden text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
                     } md:relative md:translate-x-0 transition duration-200 ease-in-out`}
             >
+
                 {/* Sidebar content */}
                 <h2 className="text-2xl font-bold px-4">Sidebar</h2>
                 <nav>
@@ -80,8 +83,6 @@ const DashboardLayout = () => {
                         </>}
 
 
-
-
                     <div className="divider text-black"></div>
                     <div className="divider text-white"></div>
                     <div className="divider text-white"></div>
@@ -91,13 +92,30 @@ const DashboardLayout = () => {
 
                     {/* Add more sidebar links as needed */}
                 </nav>
+                <div className="area">
+                    <ul class="circles">
+                        <li class="w-20 h-20 bg-white/20 rounded-full animate-circle1"></li>
+                        <li class="w-5 h-5 bg-white/20 rounded-full animate-circle2"></li>
+                        <li class="w-5 h-5 bg-white/20 rounded-full animate-circle3"></li>
+                        <li class="w-16 h-16 bg-white/20 rounded-full animate-circle4"></li>
+                        <li class="w-5 h-5 bg-white/20 rounded-full animate-circle5"></li>
+                        <li class="w-28 h-28 bg-white/20 rounded-full animate-circle6"></li>
+                        <li class="w-36 h-36 bg-white/20 rounded-full animate-circle7"></li>
+                        <li class="w-6 h-6 bg-white/20 rounded-full animate-circle8"></li>
+                        <li class="w-4 h-4 bg-white/20 rounded-full animate-circle9"></li>
+                        <li class="w-36 h-36 bg-white/20 rounded-full animate-circle10"></li>
+                    </ul>
+                </div>
             </div>
 
             {/* Outlet --> Dynamic content */}
             <div className="flex-1 md:ml-10">
-                <div className="p-5">
+                {/* <div className="p-5">
                     <Outlet />
-                </div>
+                </div> */}
+                {
+                    navigation.state === 'loading' ? <div className="w-full h-[660px] flex items-center justify-center"> <PuffLoader color="orange" size={70}></PuffLoader> </div> : <Outlet></Outlet>
+                }
             </div>
         </div>
     );

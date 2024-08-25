@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import UseAxiosPublic from "../Hooks/UseAxiosPublic";
 import ParticipantRegisterdCard from "./ParticipantRegisterdCard";
 import { useEffect, useState } from "react";
+import { PuffLoader } from "react-spinners";
 
 const ParticipantRegisteredCamp = () => {
     const [search, setSearch] = useState('');
@@ -63,14 +64,14 @@ const ParticipantRegisteredCamp = () => {
     };
 
     if (isPending) {
-        return <div>Loading...</div>;
+        return <div className="w-full h-[660px] flex items-center justify-center"> <PuffLoader color="orange" size={70}></PuffLoader> </div>
     }
 
     return (
-        <div className='max-w-6xl px-4 mx-auto   border border-lime-400 bg-lime-200 rounded-3xl'>
+        <div className='max-w-6xl px-4 mx-auto   border   bg-gray-100 rounded-3xl'>
             <section className='max-w-6xl px-4 mx-auto pt-12'>
                 <div className='md:flex items-center gap-x-3 justify-between'>
-                    <h2 className='lg:text-3xl text-xl font-bold text-lime-600 max-sm:mb-5'>Participant Registered Camp</h2>
+                    <h2 className='lg:text-3xl text-xl font-bold text-lime-500 max-sm:mb-5'>Participant Registered Camp</h2>
 
                     <form onSubmit={handlesearch}>
                         <div className='flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
@@ -181,7 +182,7 @@ const ParticipantRegisteredCamp = () => {
                         <button
                             onClick={() => handlebtn(btnNum)}
                             key={btnNum}
-                            className={`hidden ${currentPage === btnNum ? 'bg-lime-500' : 'bg-white'} px-4 py-2 mx-1 transition-colors duration-300 transform  rounded-md sm:inline hover:bg-lime-500  hover:text-white`}
+                            className={`hidden ${currentPage === btnNum ? 'bg-lime-500 text-gray-900' : 'bg-white text-gray-900'} px-4 py-2 mx-1 transition-colors duration-300 transform  rounded-md sm:inline hover:bg-lime-500  hover:text-gray-900`}
                         >
                             {btnNum}
                         </button>

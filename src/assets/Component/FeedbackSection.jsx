@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import UseAxiosPublic from "../Hooks/UseAxiosPublic";
 import FeedbackDetails from "./FeedbackDetails";
+import { PuffLoader } from "react-spinners";
 
 
 const FeedbackSection = () => {
@@ -17,6 +18,8 @@ const FeedbackSection = () => {
     });
 
     console.log(review)
+
+    if (isPending) return <div className="w-full h-[660px] flex items-center justify-center"> <PuffLoader color="orange" size={70}></PuffLoader> </div>
     return (
         <div>
             <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800 mt-16">
@@ -24,7 +27,7 @@ const FeedbackSection = () => {
                 <div className="container  mx-auto space-y-8">
                     <div className="space-y-8 text-center mb-16">
                         <h2 className="md:text-4xl text-2xl font-bold text-black">Participant Feedback</h2>
-                        <p className="font-serif md:text-[18px] dark:text-gray-600 p-4">These glowing reviews not only inspire us to maintain our high standards but also serve as a source of confidence <br /> for prospective guests seeking a memorable and enjoyable stay with us..</p>
+                        <p className="font-serif md:text-[18px] text-gray-900 p-4">These glowing reviews not only inspire us to maintain our high standards but also serve as a source of confidence <br /> for prospective guests seeking a memorable and enjoyable stay with us..</p>
 
                     </div>
                     <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">

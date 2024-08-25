@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import UseAxiosPublic from "../Hooks/UseAxiosPublic";
 import PaymentHistoryCard from "./PaymentHistoryCard";
 import { useEffect, useState } from "react";
+import { PuffLoader } from "react-spinners";
 
 
 const PaymentHistory = () => {
@@ -65,14 +66,14 @@ const PaymentHistory = () => {
     };
 
     if (isPending) {
-        return <div>Loading...</div>;
+        return <div className="w-full h-[660px] flex items-center justify-center"> <PuffLoader color="orange" size={70}></PuffLoader> </div>
     }
 
     return (
-        <div className='max-w-6xl px-4 mx-auto py-10  border border-lime-400 bg-lime-200 rounded-3xl'>
+        <div className='max-w-6xl px-4 mx-auto py-10  border  bg-gray-100 rounded-3xl'>
             <section >
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 justify-between">
-                    <h2 className="lg:text-2xl max-sm:px-5 text-xl font-bold text-lime-600">Participant Payment History</h2>
+                    <h2 className="lg:text-2xl max-sm:px-5 text-xl font-bold text-lime-500">Participant Payment History</h2>
                     <form onSubmit={handlesearch}>
                         <div className='flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
                             <input
@@ -166,7 +167,7 @@ const PaymentHistory = () => {
                         <button
                             onClick={() => handlebtn(btnNum)}
                             key={btnNum}
-                            className={`hidden ${currentpage === btnNum ? 'bg-lime-500' : 'bg-white'} px-4 py-2 mx-1 transition-colors duration-300 transform  rounded-md sm:inline hover:bg-lime-500  hover:text-white`}
+                            className={`hidden ${currentpage === btnNum ? 'bg-lime-500 text-gray-900' : 'bg-white text-gray-900'} px-4 py-2 mx-1 transition-colors duration-300 transform  rounded-md sm:inline hover:bg-lime-500  hover:text-white`}
                         >
                             {btnNum}
                         </button>

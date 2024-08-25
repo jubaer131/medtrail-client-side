@@ -42,10 +42,11 @@ const FeedBack = () => {
     }
 
     return (
-        <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
-            <section className=' p-2 md:p-6 mx-auto bg-white rounded-md shadow-md '>
-                <h2 className='text-lg font-semibold text-gray-700 capitalize '>
-                    Your Feedback
+
+        <div className=' flex justify-center items-center min-h-screen '>
+            <section className='max-sm:w-96 p-7 md:p-6 mx-auto  rounded-md shadow-md bg-lime-200'>
+                <h2 className='text-2xl font-bold text-gray-700 capitalize text-center'>
+                    give Your Feedback
                 </h2>
 
                 <form onSubmit={handlereview}>
@@ -90,6 +91,7 @@ const FeedBack = () => {
                             </label>
                             <input
                                 id='rating'
+                                required
                                 name='rating'
                                 type='number'
                                 min='1'
@@ -107,16 +109,19 @@ const FeedBack = () => {
                             className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                             name='comment'
                             id='comment'
+                            required
                         ></textarea>
                     </div>
-                    <div className='flex justify-end mt-6'>
-                        <button className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
-                            Submit
+                    <div className="card-actions mt-4">
+                        <button type="submit" className="relative w-[99%] mx-auto border border-lime-400 inline-flex items-center justify-start px-7 py-2 overflow-hidden font-medium transition-all rounded-full hover:bg-white group">
+                            <span className="h-48 w-full rounded rotate-[-40deg] bg-lime-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                            <span className="relative w-full text-black transition-colors duration-300 ease-in-out group-hover:text-white">Submit</span>
                         </button>
                     </div>
                 </form>
             </section>
         </div>
+
     )
 }
 

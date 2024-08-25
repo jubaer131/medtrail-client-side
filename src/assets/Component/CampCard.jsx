@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IoLocationSharp } from "react-icons/io5";
 import { BsCalendarDate } from "react-icons/bs";
 import { FaMonument, FaUserDoctor } from "react-icons/fa6";
 import { MdSupervisorAccount } from "react-icons/md";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const CampCard = ({ camp }) => {
 
@@ -15,26 +17,31 @@ const CampCard = ({ camp }) => {
         _id
     } = camp
 
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1200, // Animation duration
+        });
+    }, []);
+
     return (
-        <div className="flex flex-col  p-10 space-y-6  rounded-lg shadow-2xl bg-[hsl(164,60%,95%)] overflow-visible bg-opacity-80   border-4 border-emerald-100">
+        <div data-aos="zoom-in-up" className="flex flex-col  p-10 space-y-6  rounded-lg shadow-2xl bg-emerald-100 overflow-visible bg-opacity-80   border-4 border-emerald-100">
 
             <div className='space-y-4 '>
                 <img src={image} alt="" className="object-cover  w-full h-80 mb-4 " />
-                <h2 className="text-xl text-start font-semibold mb-8"> {campName}</h2>
+                <h2 className="text-xl text-gray-900 text-start font-semibold mb-8"> {campName}</h2>
 
-                <p className="text-sm dark:text-gray-600 flex  items-center gap-3"> <IoLocationSharp className='text-[22px] text-emerald-600' /> {location}.</p>
-                <p className='flex  items-center gap-3'> <FaUserDoctor className='text-emerald-600' /> {healthcareProfessional}</p>
-                <p className='flex  items-center gap-3'> <BsCalendarDate className='text-[16px] text-emerald-500' /> {dateAndTime}</p>
+                <p className="text-sm text-gray-900 flex  items-center gap-3"> <IoLocationSharp className='text-[22px] text-emerald-600' /> {location}.</p>
+                <p className='flex text-gray-900 items-center gap-3'> <FaUserDoctor className='text-emerald-600' /> {healthcareProfessional}</p>
+                <p className='flex text-gray-900 items-center gap-3'> <BsCalendarDate className='text-[16px] text-emerald-500' /> {dateAndTime}</p>
 
-                <div className="divider divider-start"></div>
-                {/* <p className='flex  items-center gap-3'> <MdSupervisorAccount className='text-xl text-emerald-600' /> Participant Count : {participantCount}</p> */}
-                <h2 className="text-[20px] font-medium flex justify-start items-center gap-4">  <FaMonument className="text-emerald-400"> </FaMonument>  Participant : <div className="badge badge-lg text-emerald-400">{participantCount}</div>  </h2>
+                {/* <div className="divider  divider-start"></div> */}
+                <hr className=" border-t border-dashed border-emerald-400 " />
+
+                <h2 className="text-[20px] text-gray-900 font-medium flex justify-start items-center gap-4">  <FaMonument className="text-emerald-400"> </FaMonument>  Participant : <div className="badge bg-emerald-50 badge-lg text-emerald-400">{participantCount}</div>  </h2>
             </div>
             <div className="flex flex-wrap justify-between">
-                {/* <div className="space-x-2">
-                    <Link to={`/popularcampdetails/${_id}`}> <button className='btn bg-[#0055B4] text-white'>Details</button></Link>
 
-                </div> */}
                 <div >
                     <Link to={`/popularcampdetails/${_id}`} class="relative px-5 py-2 font-medium text-white group ">
 

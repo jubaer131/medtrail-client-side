@@ -52,7 +52,7 @@ const PopularCampDetails = () => {
 
 
 
-    if (isPending) return <PuffLoader color="#36d7b7" size={70}></PuffLoader>;
+    if (isPending) return <div className="w-full h-[660px] flex items-center justify-center"> <PuffLoader color="orange" size={70}></PuffLoader> </div>
 
 
     return (
@@ -69,7 +69,7 @@ const PopularCampDetails = () => {
 
                 <div className=" lg:w-6/12 p-6">
                     <div className="  mx-auto lg:space-y-16 ">
-                        <article className="space-y-4  text-black">
+                        <article className="space-y-4  ">
                             <div className="space-y-6">
                                 <h1 className="text-3xl font-semibold md:tracking-tight md:text-4xl">{campName}</h1>
                                 <h2 className="text-[20px] font-medium flex items-center gap-4"> <FaLocationDot className="text-emerald-400" /> {location}</h2>

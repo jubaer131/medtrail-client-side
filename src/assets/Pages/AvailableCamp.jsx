@@ -6,7 +6,8 @@ import UseAxiosPublic from '../Hooks/UseAxiosPublic';
 import AvailableCampCard from './AvailableCampCard';
 import { Helmet } from 'react-helmet';
 import { BiLogOutCircle } from 'react-icons/bi';
-import { PropagateLoader } from 'react-spinners';
+import { PuffLoader } from 'react-spinners';
+
 
 const AvailableCamp = () => {
     const [search, setSearch] = useState('');
@@ -38,7 +39,7 @@ const AvailableCamp = () => {
         setColumns(2);
     };
 
-    if (isPending) return <PropagateLoader color="#36d7b7" />
+    if (isPending) return <div className="w-full h-[660px] flex items-center justify-center"> <PuffLoader color="orange" size={70}></PuffLoader> </div>
 
 
 

@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import UseAxiosPublic from '../Hooks/UseAxiosPublic';
+import { PuffLoader } from 'react-spinners';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
@@ -18,7 +19,7 @@ const Analytics = () => {
     });
 
     if (isPending) {
-        return <div>Loading...</div>;
+        return <div className="w-full h-[660px] flex items-center justify-center"> <PuffLoader color="orange" size={70}></PuffLoader> </div>
     }
 
     // const data = chartdata.map(camp => ({
@@ -40,7 +41,7 @@ const Analytics = () => {
 
     return (
         <div className='flex justify-center h-screen mt-8 md:mt-20'>
-            <ResponsiveContainer width="95%" height={700}>
+            <ResponsiveContainer width="95%" height={600}>
                 <BarChart
                     data={chartdata}
                     margin={{

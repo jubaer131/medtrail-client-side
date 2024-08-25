@@ -104,12 +104,7 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
 
     return (
         <>
-            {/* <Button
-                onClick={open}
-                className="rounded-md bg-sky-500 mt-5 py-2 px-4 text-sm font-medium text-white focus:outline-none data-[hover]:bg-black/30 data-[focus]:outline-1 data-[focus]:outline-white"
-            >
-                Join Camp
-            </Button> */}
+
             <button onClick={open} className="relative px-5 py-2 font-medium  group  md:inline mt-5 pl-4">
                 <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:skew-x-[18deg]"></span>
                 <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:-skew-x-[18deg]"></span>
@@ -222,18 +217,18 @@ const BookingModal2 = ({ availablecamp, refetch }) => {
 
                                         </div>
 
-                                        <button onClick={close} type="submit" className="btn my_modal_6 bg-emerald-400 w-full">Join Camp</button>
+                                        {/* <button onClick={close} type="submit" className="btn my_modal_6 bg-emerald-400 w-full">Join Camp</button> */}
+                                        <div className="card-actions mt-4">
+                                            <button type="submit" className="relative w-[99%] mx-auto border border-lime-400 inline-flex items-center justify-start px-7 py-2 overflow-hidden font-medium transition-all rounded-full hover:bg-white group">
+                                                <span className="h-48 w-full rounded rotate-[-40deg] bg-lime-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                                                <span className="relative w-full text-black transition-colors duration-300 ease-in-out group-hover:text-white">join camp</span>
+                                            </button>
+                                        </div>
                                     </form>
 
 
-                                    <div className="mt-4">
-                                        {/* <Button
-                                            className="inline-flex items-center gap-2 rounded-md bg-[#0055B4] py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
-                                            onClick={close}
-                                        >
-                                            Cancel
-                                        </Button> */}
-                                    </div>
+
+
                                 </DialogPanel>
                             </TransitionChild>
                         </div>

@@ -48,7 +48,7 @@ const HelthBlog = () => {
         <>
 
             <div className='space-y-6 text-center my-28 p-5 '>
-                <h className='text-4xl font-bold text-black'>Essential Health Tips for a Better Lifestyle</h>
+                <h className='text-4xl font-bold '>Essential Health Tips for a Better Lifestyle</h>
                 <p className='text-[17px]'> Understanding and applying these health tips can lead to increased energy, better mood, and overall enhanced well-being. <br /> By adopting these habits, you can enjoy a more vibrant and active life</p>
             </div>
             <Swiper

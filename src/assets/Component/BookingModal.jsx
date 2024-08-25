@@ -148,7 +148,7 @@ const BookingModal = ({ campdetails, refetch }) => {
                                         <div className='flex gap-5'>
                                             <div>
                                                 <label className="block mb-2 font-medium ">Camp Name</label>
-                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2 border rounded" defaultValue={campName} />
+                                                <input type="text" readOnly className="w-full lg:w-[220px] p-2  border rounded" defaultValue={campName} />
                                             </div>
                                             <div>
                                                 <label className="block mb-2 font-medium">Camp Fees</label>
@@ -226,26 +226,24 @@ const BookingModal = ({ campdetails, refetch }) => {
                                         </div>
 
 
-                                        <div>
+                                        <div className='required'>
                                             {/* payment */}
                                             <Elements stripe={stripePromise}>
                                                 <CheckoutForm2 _id={_id}></CheckoutForm2>
                                             </Elements>
                                         </div>
 
-                                        <button onClick={close} type="submit" className="btn my_modal_6 bg-emerald-400 w-full">Join Camp</button>
-
+                                        {/* <button onClick={close} type="submit" className="btn my_modal_6 bg-emerald-400 w-full">Join Camp</button> */}
+                                        <div className="card-actions mt-4">
+                                            <button type="submit" className="relative w-[99%] mx-auto border border-lime-400 inline-flex items-center justify-start px-7 py-2 overflow-hidden font-medium transition-all rounded-full hover:bg-white group">
+                                                <span className="h-48 w-full rounded rotate-[-40deg] bg-lime-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                                                <span className="relative w-full text-black transition-colors duration-300 ease-in-out group-hover:text-white">join camp</span>
+                                            </button>
+                                        </div>
                                     </form>
 
 
-                                    {/* <div className="mt-4">
-                                        <Button
-                                            className="inline-flex items-center gap-2 rounded-md bg-[#0055B4] py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
-                                            onClick={close}
-                                        >
-                                            Cancel
-                                        </Button>
-                                    </div> */}
+
                                 </DialogPanel>
                             </TransitionChild>
                         </div>

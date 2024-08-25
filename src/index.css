@@ -1,15 +1,81 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap'); */
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 
+/*Start Animations*/
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
 
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/*End Animations*/
+/*
+-- Start BackGround Animation 
+*/
 .area {
-    background: #1adbc5;
-    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+    background: #1f7326;
+    background: -webkit-linear-gradient(to left, #2d8434, #399b41);
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    /* position: absolute; */
+    /* z-index: -1; */
+}
+
+.circles {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 96%;
+    overflow: hidden;
 }
 
 .circles li {
@@ -18,27 +84,9 @@
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(243, 220, 220, 0.2);
     animation: animate 25s linear infinite;
     bottom: -150px;
-}
-
-.circles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.circles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
 }
 
 .circles li:nth-child(1) {
@@ -47,7 +95,6 @@
     height: 80px;
     animation-delay: 0s;
 }
-
 
 .circles li:nth-child(2) {
     left: 10%;
@@ -118,7 +165,6 @@
 }
 
 @keyframes animate {
-
     0% {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
@@ -130,5 +176,4 @@
         opacity: 0;
         border-radius: 50%;
     }
-
 }

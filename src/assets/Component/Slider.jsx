@@ -11,6 +11,7 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom';
+
 export default function Slider() {
     return (
         <>
@@ -37,11 +38,7 @@ export default function Slider() {
                             <p className='w-[70%] mx-auto mt-4 mb-7'>Providing expert care and medical services to ensure a healthier community.
                                 Join us in our mission to make healthcare accessible for everyone.</p>
 
-                            {/* <Link to={'/add_spot'} className="relative px-5 py-2 font-medium text-white group hidden md:inline">
-                                <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:skew-x-[18deg]"></span>
-                                <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:-skew-x-[18deg]"></span>
-                                <span className="relative"> Get Started </span>
-                            </Link> */}
+
                             <Link to='' class="relative px-5 py-2 font-medium text-white group ">
 
                                 <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-emerald-500 group-hover:bg-emerald-700 group-hover:skew-x-12"></span>
@@ -64,7 +61,7 @@ export default function Slider() {
                             <p className='w-[70%] mx-auto mt-4 mb-7'>Dedicated to the health and well-being of our youngest patients.
                                 Providing specialized care, screenings, and treatments to ensure a bright and healthy future for every child.</p>
 
-                            <Link to='' class="relative px-5 py-2 font-medium text-white group ">
+                            <Link to="#childrenSec" class="relative px-5 py-2 font-medium text-white group ">
 
                                 <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-emerald-500 group-hover:bg-emerald-700 group-hover:skew-x-12"></span>
                                 <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-emerald-500 group-hover:bg-emerald-700 group-hover:-skew-x-12"></span>

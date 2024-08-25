@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import UseAxiosPublic from "../Hooks/UseAxiosPublic";
 import { useState } from "react";
 import CampCard from "./CampCard";
-import { PropagateLoader } from 'react-spinners';
+import { PropagateLoader, PuffLoader } from 'react-spinners';
 
 const PopularMedicalCamp = () => {
 
@@ -19,7 +19,7 @@ const PopularMedicalCamp = () => {
 
 
     })
-    if (isPending) return <PropagateLoader color="#36d7b7" />;
+    if (isPending) return <div className="w-full h-[660px] flex items-center justify-center"> <PuffLoader color="orange" size={70}></PuffLoader> </div>
 
     const handleSeeAll = () => {
         setVisibleCamps(camps.length); // Show all camps
@@ -28,7 +28,7 @@ const PopularMedicalCamp = () => {
     return (
 
         <div className="max-w-7xl mx-auto md:mt-36">
-            <h1 className="md:text-4xl text-xl font-bold text-center md:my-8 mt-8 text-black ">Popular medical camps</h1>
+            <h1 className="md:text-4xl text-xl font-bold text-center md:my-8 mt-8  ">Popular medical camps</h1>
             <p className="text-center mb-8 md:text-xl max-sm:p-6">these popular medical camp offers a transformative experience, blending specialized medical care with recreational <br />activities and a supportive community. From educational workshops to outdoor adventures, it provides a holistic approach <br /> to wellness  empowering young patients to thrive despite their challenges. Year after year</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
                 {camps.slice(0, visibleCamps).map((camp) => (
@@ -39,9 +39,7 @@ const PopularMedicalCamp = () => {
                 ))}
             </div>
             {visibleCamps < camps.length && (
-                // <div className="text-center mt-4">
-                //     <button onClick={handleSeeAll} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">See All</button>
-                // </div>
+
                 <div className="text-center mt-8">
 
                     <a href="#_" class="relative px-5 py-2 font-medium text-white group">

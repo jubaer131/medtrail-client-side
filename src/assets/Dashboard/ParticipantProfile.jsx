@@ -83,7 +83,7 @@ const ParticipantProfile = () => {
                         <p className='mt-2 text-xl font-medium text-gray-800 '>
 
                         </p>
-                        <div className='w-full p-2 mt-4 rounded-lg'>
+                        <div className='w-full p-2 mt-4 rounded-lg '>
                             <div className='flex flex-wrap items-center justify-between text-sm text-gray-600 '>
                                 <p className='flex flex-col'>
                                     Name
@@ -98,10 +98,8 @@ const ParticipantProfile = () => {
 
 
                                 <div>
-                                    {/* <button className='bg-lime-500 px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-emerald-700 block mb-1'>
-                                    <UpdateModal></UpdateModal>
-                                </button> */}
-                                    <a href="#_" class="relative px-5 py-2 font-medium text-white group">
+
+                                    <a href="#_" class="relative md:px-5  py-2 font-medium text-white group">
                                         <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-lime-500 group-hover:bg-lime-600 group-hover:skew-x-12"></span>
                                         <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-lime-600 group-hover:bg-lime-500 group-hover:-skew-x-12"></span>
                                         <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-lime-600 -rotate-12"></span>
