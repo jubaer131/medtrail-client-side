@@ -24,6 +24,7 @@ import Payment from "../Dashboard/Payment";
 import ErrorPage from "../Pages/ErrorPage";
 import Privateroute from "./Privateroute";
 import OrganizerRoute from "./OrganizerRoute";
+import AboutUs from "../Pages/AboutUs";
 
 const router = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path: '/detailsavailablecamp/:id',
                 element: <DetailsAvailableCamp></DetailsAvailableCamp>
+            },
+            {
+                path: "/aboutUs",
+                element: <AboutUs></AboutUs>
             }
 
         ]
@@ -62,11 +67,7 @@ const router = createBrowserRouter([
         path: '/dashboard',
         element: <Privateroute> <DashboardLayout></DashboardLayout></Privateroute>,
         children: [
-            // common route
-            {
-                index: true,
-                element: <Privateroute> <CommonRoute></CommonRoute></Privateroute>
-            },
+
 
 
 

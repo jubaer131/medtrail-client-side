@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const ErrorPage = () => {
     return (
 
-        <section className="bg-[#403DD4] text-white container mx-auto rounded-2xl">
-            <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+        <section className="bg-teal-600 text-white max-w-5xl mx-auto rounded-2xl max-sm:mx-5 mt-4  md:mt-10">
+            <div className="flex flex-col justify-center px-16 mx-auto py-10 lg:flex-row lg:justify-between">
                 <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                     <h1 className="text-5xl font-bold leading-none sm:text-6xl">
                         <p className="text-2xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
@@ -20,7 +20,7 @@ const ErrorPage = () => {
                     </div>
                 </div>
                 <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-[650px]">
-                    <img src='https://img.freepik.com/free-vector/404-error-web-template-with-funny-monster_23-2147788955.jpg?t=st=1717761308~exp=1717764908~hmac=87aee0b5e8a31b281a7d064dea1c394826d8ea21e1417f5c461e676c29fc3a4f&w=826' />
+                    <img src='https://i.ibb.co/K2G4FKy/404-error-with-man-thinking-24908-77772.jpg' />
                 </div>
             </div>
         </section>

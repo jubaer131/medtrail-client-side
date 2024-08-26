@@ -30,6 +30,7 @@ const Navbar = () => {
 
         <li><NavLink className={({ isActive }) => isActive ? 'text-emerald-400 border border-emerald-400 hover:bg-emerald-400  hover:text-white rounded-md py-[7px] px-3 font-medium text-[17px]' : 'py-[6px] px-3 font-medium  text-emerald-500 text-[17px]'} to={'/'}>Home</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? 'text-emerald-400 border border-emerald-400 hover:bg-emerald-400 hover:text-white rounded-md py-[7px] px-3 font-medium text-[17px]' : 'py-[6px] px-3 font-medium text-[17px] text-emerald-500 '} to='/availablecamp'>Available Camps</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'text-emerald-400 border border-emerald-400 hover:bg-emerald-400 hover:text-white rounded-md py-[7px] px-3 font-medium text-[17px]' : 'py-[6px] px-3 font-medium text-[17px] text-emerald-500'} to="/aboutUs">About Us</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? 'text-emerald-400 border border-emerald-400 hover:bg-emerald-400 hover:text-white rounded-md py-[7px] px-3 font-medium text-[17px]' : 'py-[6px] px-3 font-medium text-[17px] text-emerald-500'} to="/login">Join Us</NavLink></li>
 
     </>
