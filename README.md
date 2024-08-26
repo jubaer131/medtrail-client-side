@@ -8,7 +8,7 @@
 * Primary Goal: Manage and maintain medical camps efficiently.
 * Secondary Goals: Provide a centralized platform for scheduling camps, managing medical resources, and reporting on camp activities.
 
-  [Live site](https://medtrail-assignment-12-131.netlify.app)
+  [Live site](https://medicalcamp-131.netlify.app)
 
   [Client repository](https://github.com/jubaer131/medtrail-client-side.git)
 
@@ -16,10 +16,11 @@
 
 # Key Features:
 
-* Dashboard: Overview of upcoming camps, recent activities, and key metrics.
-* Camp Management: Schedule camps, manage locations, and allocate medical staff and resources.
-* Patient Management: Register patients, track medical histories, and manage appointments.
-* User Roles: Differentiate between administrators, medical staff, and volunteers with varying access levels.
+*  1: Manage and maintain medical camps efficiently.
+*  2: Provide a centralized platform for scheduling camps.
+*  3: Patient Management.
+
+
 
 # Technology Stack:
 
@@ -27,9 +28,25 @@
 * Frontend: React.js, HTML5, tailwind.css, firebase for responsive and interactive user interface.
 * Additional Tools: mongodb, RESTful APIs for integration with external systems, JWT for authentication.
   
-# Steps to Clone the Repository:
+## Installation Steps
 
-* Navigate to Cloned Directory: Open terminal/command prompt and use cd command.
-* Install Dependencies: Run npm install to install required packages.
-* Setup Environment Variables: Configure .env file if necessary for API keys, database URLs.
-* Run the Project: Follow README instructions, typically npm start to launch the application.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/AbuRaihan32/Lagoon-client-side.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd folder-name
+    ```
+3. Install dependencies:
+    ```sh
+    npm install
+    ```
+
+    
+## used npm packages:
+1. - [@AOS-Package](https://www.npmjs.com/package/aos) 
+2. - [@React-Hook-form](https://react-hook-form.com/)
+3. - [@Swiper-slider](https://swiperjs.com/)
+4. - [@React-spiner](https://www.davidhu.io/react-spinners)
+5. - [@Tailwindcss-buttons](https://devdojo.com/tailwindcss/buttons)
