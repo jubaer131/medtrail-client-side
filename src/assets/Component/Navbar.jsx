@@ -33,6 +33,10 @@ const Navbar = () => {
         <li><NavLink className={({ isActive }) => isActive ? 'text-emerald-400 border border-emerald-400 hover:bg-emerald-400 hover:text-white rounded-md py-[7px] px-3 font-medium text-[17px]' : 'py-[6px] px-3 font-medium text-[17px] text-emerald-500'} to="/aboutUs">About Us</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? 'text-emerald-400 border border-emerald-400 hover:bg-emerald-400 hover:text-white rounded-md py-[7px] px-3 font-medium text-[17px]' : 'py-[6px] px-3 font-medium text-[17px] text-emerald-500'} to="/login">Join Us</NavLink></li>
 
+        {
+            item.role === 'admin' ? <>  <li><NavLink className={({ isActive }) => isActive ? 'text-emerald-400 border border-emerald-400 hover:bg-emerald-400 hover:text-white rounded-md py-[7px] px-3 font-medium text-[17px]' : 'py-[6px] px-3 font-medium text-[17px] text-emerald-500'} to='/dashboard/organizerprofile'>Dashboard</NavLink></li>  </> : <> <li><NavLink className={({ isActive }) => isActive ? 'text-emerald-400 border border-emerald-400 hover:bg-emerald-400 hover:text-white rounded-md py-[7px] px-3 font-medium text-[17px]' : 'py-[6px] px-3 font-medium text-[17px] text-emerald-500'} to='/dashboard/participantprofile'>Dashboard</NavLink></li> </>
+        }
+
     </>
 
 
@@ -50,10 +54,11 @@ const Navbar = () => {
                         {options}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl font-semibold text-emerald-500"><FaTruckMedical /> MEDTRAIL</a>
-                {/* <div>
-                    <img className="w-10 h-10 rounded-br-3xl rounded-tl-3xl rounded-tr-3xl " src="https://i.ibb.co/4TqjjKY/Blue-Black-Minimal-Simple-Corporate-Animated-Logo-2.png" alt="" />
-                </div> */}
+                {/* <a className="btn btn-ghost text-xl font-semibold text-emerald-500"><FaTruckMedical /> MEDTRAIL</a> */}
+                <a className="flex justify-start items-center btn btn-ghost ">
+                    <img className="w-10 h-10 rounded-3xl rounded-tl-3xl rounded-tr-3xl " src="https://i.ibb.co.com/wScWqbF/ACH-Tree.png" alt="" />
+                    <button className=" text-xl font-semibold text-emerald-500"> MEDTRAIL</button>
+                </a>
             </div>
             <div className="navbar-center  hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -78,6 +83,7 @@ const Navbar = () => {
 
                 {
                     user ? <>
+
                         <div className="dropdown dropdown-end">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
@@ -96,6 +102,7 @@ const Navbar = () => {
                             </ul>
                         </div>
 
+
                     </> : ""
                 }
 
@@ -103,7 +110,7 @@ const Navbar = () => {
 
 
             </div>
-        </div>
+        </div >
     );
 };
 

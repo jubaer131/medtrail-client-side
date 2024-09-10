@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { FaLocationDot, FaMonument } from "react-icons/fa6";
+import { FaLocationDot, } from "react-icons/fa6";
+import { MdSupervisorAccount } from "react-icons/md";
 import { FaUserDoctor } from "react-icons/fa6";
 import { BiLogOutCircle } from "react-icons/bi";
 import AOS from 'aos';
@@ -25,17 +26,17 @@ const AvailableCampCard = ({ camp }) => {
     }, []);
 
     return (
-        <div>
-            <div data-aos="zoom-out-left" className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-emerald-50 dark:text-gray-800">
+        <div className="">
+            <div data-aos="zoom-out-left" className="flex flex-col max-sm:mx-4  p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-emerald-50 dark:text-gray-800">
 
                 <div className='space-y-4'>
-                    <img src={image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
+                    <img src={image} alt="" className="object-cover w-full mb-4  h-48 dark:bg-gray-500 mask mask-circle" />
                     <h2 className="mb-1 text-xl text-gray-900 font-semibold">{campName}</h2>
                     <p className="text-sm text-gray-900 flex items-center gap-3 "><FaLocationDot className="text-emerald-400" /> {location}.</p>
                     <p className="flex items-center gap-3 text-gray-900 "> <FaUserDoctor className="text-emerald-400" /> {healthcareProfessional}</p>
                     <p>  {dateAndTime}</p>
 
-                    <h2 className="text-[20px] text-gray-900 font-medium flex justify-start items-center gap-4">  <FaMonument className="text-emerald-400"> </FaMonument>  Participant : <div className="badge badge-lg bg-emerald-50 text-emerald-400">{participantCount}</div>  </h2>
+                    <h2 className="text-[20px] text-gray-900 font-medium flex justify-start items-center gap-4">  <MdSupervisorAccount className="text-emerald-400" />  Participant : <div className="badge badge-lg bg-emerald-50 text-emerald-400">{participantCount}</div>  </h2>
                 </div>
                 <div className="flex flex-wrap justify-between">
                     <div className="space-x-2">

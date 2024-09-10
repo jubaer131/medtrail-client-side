@@ -56,7 +56,7 @@ const BookingModal = ({ campdetails, refetch }) => {
             return data;
         },
         onSuccess: async (data) => {
-            toast.success('joining camp successful');
+            toast.success('joining  successful');
 
             // Update participant count
             await axiosPublic.patch(`/joincampdetails/${_id}`, {
@@ -113,12 +113,7 @@ const BookingModal = ({ campdetails, refetch }) => {
 
     return (
         <>
-            {/* <Button
-                onClick={open}
-                className="rounded-md bg-sky-500 mt-5 py-2 px-4 text-sm font-medium text-white focus:outline-none data-[hover]:bg-black/30 data-[focus]:outline-1 data-[focus]:outline-white"
-            >
-                Join Camp
-            </Button> */}
+
             <button onClick={open} className="relative px-5 py-2 font-medium  group  md:inline mt-5 pl-4">
                 <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:skew-x-[18deg]"></span>
                 <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:-skew-x-[18deg]"></span>
@@ -226,7 +221,7 @@ const BookingModal = ({ campdetails, refetch }) => {
                                         </div>
 
 
-                                        <div className='required'>
+                                        <div >
                                             {/* payment */}
                                             <Elements stripe={stripePromise}>
                                                 <CheckoutForm2 _id={_id}></CheckoutForm2>

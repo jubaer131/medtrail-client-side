@@ -8,30 +8,80 @@ const AboutUs = () => {
             <div>
                 <Navbar></Navbar>
             </div>
-            <div className='w-full space-y-4 bg-emerald-100 p-8 '>
-                <h1 className='text-center text-4xl font-bold'>About Us</h1>
-                <div className='flex items-center justify-center gap-5'>
-                    <Link to="/">Home</Link>
-                    <Link>About Us</Link>
+            <div className='w-full space-y-4 bg-emerald-100 p-8  md:h-[550px]' style={{
+                backgroundImage: "url('https://i.ibb.co.com/QkRtPXp/IMG-8644-2.jpg')",
+                backgroundSize: "cover", // Ensures the image covers the entire div
+                backgroundRepeat: "no-repeat", // Prevents the image from repeating
+                backgroundPosition: "center", // Centers the background image
+            }}>
+
+                <div className='text-right lg:mr-60 lg:mt-52'>
+
+                    <h1 className='text-white lg:text-5xl '>Movement of Care</h1>
                 </div>
             </div>
-            <div className='max-w-5xl mx-auto md:my-8 my-2 p-8'>
+            <div className='max-w-5xl mx-auto md:my-8 my-2 p-8 space-y-4 '>
+                <h1 className='text-3xl'>Mission Statement</h1>
+                <br />
+                <p className='text-[16px] text-[#31af6e]'>Working toward healthier camp communities</p>
+                <p>Serving the three distinct communities of nurses and healthcare providers, behavioral health specialists and camp leadership, the Alliance for Camp Health (ACH) serves as the knowledge center for camp health services. ACH prepares healthcare providers, behavioral health specialists and camp leaders to address the wellbeing of youth and young adults in summer learning environments. We offer education and support that brings together the experts in camp to address injury prevention, illness response, mental, emotional, and social health care, behavioral health support, and risk management.  To this end, ACH strives to support other programs seeking validation and who wish to be vetted by ACH as promoting healthy camp programs, services, or activities.</p>
 
-                <p>MedTrail Medical Camp is a pioneering initiative dedicated to providing essential healthcare services to underserved communities, focusing on improving the quality of life for individuals who otherwise have limited access to medical care. This initiative was born out of the recognition that many communities across the globe suffer from a lack of basic healthcare services, leading to preventable diseases, poor health outcomes, and diminished quality of life. The MedTrail Medical Camp seeks to bridge this gap by delivering comprehensive healthcare directly to the people who need it the most. Through our medical camps, we offer a wide range of services, including general health check-ups, diagnostic services, specialist consultations, health education, and preventive care, all at no cost to the participants. Our mission is to ensure that no one is left behind when it comes to receiving the healthcare they need to live healthy, productive lives.</p> <br />
-                <p>One of the cornerstones of the MedTrail Medical Camp is its focus on preventive healthcare. We believe that by educating communities about the importance of regular health check-ups, good nutrition, hygiene, and early detection of diseases, we can significantly reduce the prevalence of common health issues. Our camps include workshops and seminars on topics such as diabetes management, hypertension control, maternal and child health, and vaccination. These sessions are designed to empower individuals with the knowledge they need to take charge of their health and prevent chronic illnesses. We also distribute educational materials and health kits to reinforce these lessons and provide practical tools for maintaining a healthy lifestyle.</p> <br />
-                <p>In addition to preventive care, the MedTrail Medical Camp provides a wide range of diagnostic services. Many of the communities we serve have limited access to diagnostic tools, which often leads to delayed treatment and poor health outcomes. To address this, our medical camps are equipped with portable diagnostic equipment, allowing us to conduct on-site testing for conditions such as diabetes, hypertension, and infectious diseases. We also offer specialist consultations in fields such as cardiology, pediatrics, gynecology, and dermatology. These services are crucial in identifying and treating conditions that might otherwise go undiagnosed, ensuring that individuals receive the care they need before their conditions become severe.</p> <br />
-                <p>Our commitment to holistic care extends beyond the immediate medical needs of our patients. At MedTrail Medical Camp, we recognize the importance of addressing the social determinants of health—factors such as poverty, education, and access to resources—that can have a profound impact on an individual’s well-being. To this end, our camps also provide support services such as nutrition counseling, mental health support, and referrals to local resources for ongoing care. We work closely with local organizations, healthcare providers, and volunteers to ensure that our patients receive comprehensive care that addresses both their physical and socio-economic needs.</p> <br />
-                <p>
-                    MedTrail Medical Camp is a pioneering initiative dedicated to providing essential healthcare services to underserved communities, focusing on improving the quality of life for individuals who otherwise have limited access to medical care. This initiative was born out of the recognition that many communities across the globe suffer from a lack of basic healthcare services, leading to preventable diseases, poor health outcomes, and diminished quality of life. The MedTrail Medical Camp seeks to bridge this gap by delivering comprehensive healthcare directly to the people who need it the most. Through our medical camps, we offer a wide range of services, including general health check-ups, diagnostic services, specialist consultations, health education, and preventive care, all at no cost to the participants. Our mission is to ensure that no one is left behind when it comes to receiving the healthcare they need to live healthy, productive lives. <br /> <br />
+                <p>As the landscape of camp health continues to evolve our purpose remains the same. We are focused on care. Our Care Team strives to create healthier camp communities by creating leaders, collaborating with partners, generating evidence, innovating programs, and improving human capital one CareTeam at a time.</p>
 
-                    One of the cornerstones of the MedTrail Medical Camp is its focus on preventive healthcare. We believe that by educating communities about the importance of regular health check-ups, good nutrition, hygiene, and early detection of diseases, we can significantly reduce the prevalence of common health issues. Our camps include workshops and seminars on topics such as diabetes management, hypertension control, maternal and child health, and vaccination. These sessions are designed to empower individuals with the knowledge they need to take charge of their health and prevent chronic illnesses. We also distribute educational materials and health kits to reinforce these lessons and provide practical tools for maintaining a healthy lifestyle. <br /> <br />
+                <h1 className='text-3xl'>Ends Statements</h1>
+                <p className='text-[#31af6e]'>Ends Statements (listed in no particular order)</p>
 
-                    In addition to preventive care, the MedTrail Medical Camp provides a wide range of diagnostic services. Many of the communities we serve have limited access to diagnostic tools, which often leads to delayed treatment and poor health outcomes. To address this, our medical camps are equipped with portable diagnostic equipment, allowing us to conduct on-site testing for conditions such as diabetes, hypertension, and infectious diseases. We also offer specialist consultations in fields such as cardiology, pediatrics, gynecology, and dermatology. These services are crucial in identifying and treating conditions that might otherwise go undiagnosed, ensuring that individuals receive the care they need before their conditions become severe. <br />
+                <ul className='pl-12'>
+                    <li className='list-disc  '>
 
-                    Our commitment to holistic care extends beyond the immediate medical needs of our patients. At MedTrail Medical Camp, we recognize the importance of addressing the social determinants of health—factors such as poverty, education, and access to resources—that can have a profound impact on an individual’s well-being. To this end, our camps also provide support services such as nutrition counseling, mental health support, and referrals to local resources for ongoing care. We work closely with local organizations, healthcare providers, and volunteers to ensure that our patients receive comprehensive care that addresses both their physical and socio-economic needs. <br />
+                        Every camp will have an appropriate healthcare provider
+                    </li>
+                    <li className='list-disc '>
 
-                    The success of MedTrail Medical Camp is built on the collaboration and dedication of our volunteers and partners. Our team includes medical professionals, health educators, and community volunteers who share a commitment to improving health outcomes for underserved populations. Their expertise and compassion are the driving forces behind our camps, ensuring that every patient receives personalized, high-quality care. Moreover, our partnerships with local healthcare providers and organizations enable us to extend our reach and create lasting impact in the communities we serve. By working together, we are able to offer a continuity of care that extends beyond the duration of the camp, ensuring that patients have access to the services and support they need for long-term health.</p> <br />
-                <p>Looking ahead, MedTrail Medical Camp is committed to expanding its reach and enhancing the services we provide. We are continually exploring new partnerships, technologies, and approaches to better serve our patients and address the evolving healthcare needs of the communities we serve. Our vision is to create a world where everyone, regardless of their circumstances, has access to the healthcare they need to live a healthy, fulfilling life. Through our medical camps, we are taking meaningful steps towards achieving this vision, one community at a time.</p>
+                        A robust body of knowledge directs camp health services
+                    </li>
+                    <li className='list-disc '>
+
+                        The camp experience is intentionally designed to promote wellbeing
+                    </li>
+                </ul>
+
+                <div className='lg:flex justify-center items-center gap-5 '>
+                    <div>
+                        <img src="https://i.ibb.co.com/wCdSsHD/ACH-Fire2.png" alt="" />
+                        <h1 className='text-center text-[15px] font-semibold mt-10 mb-2'> CAMP NURSING PRACTICE</h1>
+                        <p className='text-center text-[18px]'>Standards of Practice and tools for camp nurses</p>
+                        <br /><br />
+                        <p className='text-start text-[17px] mb-7 '>The ACH CareTeam is a dedictaed group of nurses, camp leaders, behavioral health specialists and creative folks who are passionate about healthy camp communities.</p>
+                        <img src="https://i.ibb.co.com/k9qK6wJ/Meet-the-Care-Team.png" alt="" />
+                        <p className='text-start text-[17px] mt-7 '>
+                            Meet the Care Team: Our compassionate team offers personalized care & support.</p>
+                    </div>
+                    <div>
+                        <img src="https://i.ibb.co.com/wScWqbF/ACH-Tree.png" alt="" />
+                        <h1 className='text-center text-[15px] font-semibold mt-10 mb-2'>MANAGING CAMP HEALTH</h1>
+                        <p className='text-center text-[18px]'>The framework and management of Camp Health Services</p>
+                        <br /><br />
+                        <p className='text-start text-[17px] mb-7 '>The ACH CareTeam is a dedictaed group of nurses, camp leaders, behavioral health specialists and creative folks who are passionate about healthy camp communities.</p>
+                        <img src="https://i.ibb.co.com/jgq72d9/ACH-Research-9-0.png" alt="" />
+                        <p className='text-start text-[17px] mt-7 '>Research drives the work of ACH resulting in evidence based practice and resources</p>
+                    </div>
+                    <div>
+                        <img src="https://i.ibb.co.com/hCJwrwd/ACH-Water.png" alt="" />
+                        <h1 className='text-center text-[15px] font-semibold mt-10 mb-2'>BEHAVIORAL HEALTH INITIATIVES</h1>
+                        <p className='text-center text-[18px]'>Supporting mental, social and emotional health (MESH)</p>
+                        <br /><br />
+                        <p className='text-start text-[17px] mb-7 '>The ACH CareTeam is a dedictaed group of nurses, camp leaders, behavioral health specialists and creative folks who are passionate about healthy camp communities.</p>
+                        <img src="https://i.ibb.co.com/q7vRcVC/Explore-Discover-Imagine-Wonder-A-level-for-every-Healthy-Camp-Partner-1.png" alt="" />
+                        <p className='text-start text-[17px] mt-7 '>Research drives the work of ACH resulting in evidence based practice and resources</p>
+                    </div>
+
+                </div>
+
+
+
+
+
             </div>
         </>
     );

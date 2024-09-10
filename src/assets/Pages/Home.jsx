@@ -5,6 +5,8 @@ import ChildrenSection from "../Component/ChildrenSection";
 import { Helmet } from "react-helmet";
 import HelthBlog from "../Component/HelthBlog";
 import Navbar from "../Component/Navbar";
+import { Parallax } from 'react-parallax';
+
 const Home = () => {
     return (
         <div className="relative">
@@ -19,11 +21,14 @@ const Home = () => {
                 <PopularMedicalCamp ></PopularMedicalCamp>
             </div>
             <ChildrenSection></ChildrenSection>
-            <div className="mt-20 w-full bg-green-200 bg-[url(https://i.ibb.co/RhFSkwH/alternating-arrowhead-2.png)] rounded-full">
-                <div className="w-[90%] md:max-w-5xl mx-auto">
+            <div className="mt-20 w-full bg-green-200 ">
+                <Parallax blur={10} bgImage="https://i.ibb.co.com/mc0S7Ty/smiling-young-male-doctor-wearing-medical-robe-stethoscope-sitting-desk-with-work-tools-putting-hand.jpg" bgImageAlt="the cat" strength={400} >
+                    <div className="w-[90%] md:max-w-5xl mx-auto">
 
-                    <FeedbackSection></FeedbackSection>
-                </div>
+                        <FeedbackSection></FeedbackSection>
+                    </div>
+                </Parallax>
+
             </div>
             <div className="my-28 max-w-7xl mx-auto">
                 <HelthBlog></HelthBlog>
