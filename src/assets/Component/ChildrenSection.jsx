@@ -25,7 +25,7 @@ const ChildrenSection = () => {
     });
 
     return (
-        <section id="section1" className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800 mt-10 shadow-2xl">
+        <section id="section1" className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800 mt-10 ">
             <div className="max-w-7xl  p-6 mx-auto space-y-8">
                 <div className="space-y-2 text-center mb-12">
                     <h2 className="md:text-3xl text-2xl font-bold mb-4 ">Specialized Medical Camps for children</h2>

@@ -36,7 +36,7 @@ const AvailableCampCard = ({ camp }) => {
                     <p className="flex items-center gap-3 text-gray-900 "> <FaUserDoctor className="text-emerald-400" /> {healthcareProfessional}</p>
                     <p>  {dateAndTime}</p>
 
-                    <h2 className="text-[20px] text-gray-900 font-medium flex justify-start items-center gap-4">  <MdSupervisorAccount className="text-emerald-400" />  Participant : <div className="badge badge-lg bg-emerald-50 text-emerald-400">{participantCount}</div>  </h2>
+                    <h2 className="text-[20px] text-gray-900 font-medium flex justify-start items-center gap-4">  <MdSupervisorAccount className="text-emerald-400" />  Participant : <div className="badge badge-lg bg-emerald-100 text-emerald-400">{participantCount}</div>  </h2>
                 </div>
                 <div className="flex flex-wrap justify-between">
                     <div className="space-x-2">

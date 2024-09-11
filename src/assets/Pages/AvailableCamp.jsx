@@ -45,14 +45,14 @@ const AvailableCamp = () => {
 
     return (
         <>
-            <div className='max-sm:px-0  max-sm:mx-0'>
+            <div >
                 <Helmet>
                     <title>Available Camp</title>
                 </Helmet>
                 <div >
                     <Navbar></Navbar>
                 </div>
-                <div className='w-full space-y-4 bg-emerald-100 p-8  md:h-[620px]  ' style={{
+                <div className='w-full  bg-emerald-100 p-8  lg:h-[620px]  ' style={{
                     backgroundImage: "url('https://i.ibb.co.com/sy9NRxf/forest-trail-sign-2021-08-29-21-03-11-utc.jpg')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",

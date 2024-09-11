@@ -22,7 +22,7 @@ const Home = () => {
             </div>
             <ChildrenSection></ChildrenSection>
             <div className="mt-20 w-full bg-green-200 ">
-                <Parallax blur={10} bgImage="https://i.ibb.co.com/mc0S7Ty/smiling-young-male-doctor-wearing-medical-robe-stethoscope-sitting-desk-with-work-tools-putting-hand.jpg" bgImageAlt="the cat" strength={400} >
+                <Parallax blur={0} bgImage="https://i.ibb.co.com/MsvdxYB/close-up-shot-busy-male-waiter-uniform-with-medical-mask-holding-order-book-green-background.jpg" bgImageAlt="the cat" strength={400} >
                     <div className="w-[90%] md:max-w-5xl mx-auto">
 
                         <FeedbackSection></FeedbackSection>

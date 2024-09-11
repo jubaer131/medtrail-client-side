@@ -53,7 +53,7 @@ const AboutUs = () => {
                         <p className='text-center text-[18px]'>Standards of Practice and tools for camp nurses</p>
                         <br /><br />
                         <p className='text-start text-[17px] mb-7 '>The ACH CareTeam is a dedictaed group of nurses, camp leaders, behavioral health specialists and creative folks who are passionate about healthy camp communities.</p>
-                        <img src="https://i.ibb.co.com/k9qK6wJ/Meet-the-Care-Team.png" alt="" />
+                        <img src="https://i.ibb.co.com/zX3Sn6m/close-up-medical-team-ready-work.jpg" className='h-[305px]  w-full' alt="" />
                         <p className='text-start text-[17px] mt-7 '>
                             Meet the Care Team: Our compassionate team offers personalized care & support.</p>
                     </div>
@@ -63,7 +63,7 @@ const AboutUs = () => {
                         <p className='text-center text-[18px]'>The framework and management of Camp Health Services</p>
                         <br /><br />
                         <p className='text-start text-[17px] mb-7 '>The ACH CareTeam is a dedictaed group of nurses, camp leaders, behavioral health specialists and creative folks who are passionate about healthy camp communities.</p>
-                        <img src="https://i.ibb.co.com/jgq72d9/ACH-Research-9-0.png" alt="" />
+                        <img src="https://i.ibb.co.com/NTDM3gr/man-jacket-folder-successful-manager-work-with-documents-inspecting-finances-concept-474717-39446.jpg" className='h-[305px]  w-full' alt="" />
                         <p className='text-start text-[17px] mt-7 '>Research drives the work of ACH resulting in evidence based practice and resources</p>
                     </div>
                     <div>
@@ -72,7 +72,7 @@ const AboutUs = () => {
                         <p className='text-center text-[18px]'>Supporting mental, social and emotional health (MESH)</p>
                         <br /><br />
                         <p className='text-start text-[17px] mb-7 '>The ACH CareTeam is a dedictaed group of nurses, camp leaders, behavioral health specialists and creative folks who are passionate about healthy camp communities.</p>
-                        <img src="https://i.ibb.co.com/q7vRcVC/Explore-Discover-Imagine-Wonder-A-level-for-every-Healthy-Camp-Partner-1.png" alt="" />
+                        <img src="https://i.ibb.co.com/mBSXmP2/intercultural-male-friends-looking-map-23-2148300941.jpg" className='h-[305px]  w-full' alt="" />
                         <p className='text-start text-[17px] mt-7 '>Research drives the work of ACH resulting in evidence based practice and resources</p>
                     </div>
 

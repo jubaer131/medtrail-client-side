@@ -5,6 +5,7 @@ import UseAxioussecure from "../Hooks/UseAxioussecure";
 import ManageCampCard from "./ManageCampCard";
 import { useEffect, useState } from "react";
 import { PuffLoader } from "react-spinners";
+import { BiLogOutCircle } from "react-icons/bi";
 
 const ManageCamp = () => {
     const [itemsPerPage, setItemsPerPage] = useState(10);
@@ -70,21 +71,25 @@ const ManageCamp = () => {
 
     return (
         <section className='max-w-6xl px-4 mx-auto pt-5 md:mt-8 border  bg-gray-100 rounded-3xl'>
-            <div className='md:flex items-center justify-between mb-8 px-4'>
-                <h2 className='text-2xl font-bold text-lime-500 '>Manage Camp</h2>
+            <div className='md:flex items-center justify-between mb-8 px-4  max-sm:space-y-5'>
+                <h2 className='text-2xl font-bold text-lime-700 max-sm:ml-4'>Manage Camp</h2>
 
                 {/* search bar */}
                 <form onSubmit={handleSearch}>
                     <div className='flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
                         <input
-                            className='px-6 py-3 rounded-l-lg max-sm:w-36 w-[350px] text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
+                            className='px-6 py-2 max-sm:w-full rounded-l-lg  w-[250px] text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
                             type='text'
                             name='search'
                             placeholder='Enter Camp Name'
                             aria-label='Enter Job Title'
                         />
-                        <button className='px-1 md:px-4 py-3 rounded-r-2xl text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-lime-500 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
-                            Search
+
+                        <button className="relative px-5 py-2 mt-0 mr-2 font-medium  group  md:inline  pl-4">
+                            <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:skew-x-[18deg]"></span>
+                            <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-[18deg] border border-[#32CD32] group-hover:border-[#32CD32] group-hover:-skew-x-[18deg]"></span>
+
+                            <span className="flex items-center gap-2 relative"><BiLogOutCircle className="text-xl"></BiLogOutCircle> Search</span>
                         </button>
                     </div>
                 </form>

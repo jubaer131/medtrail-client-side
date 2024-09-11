@@ -214,7 +214,7 @@ const HelthBlog = () => {
         <section className="mt-10 md:max-w-[90%] mx-auto -mb-7">
             <div className="px-4 py-8 sm:px-6 lg:px-8">
                 <div className='space-y-6 text-center mb-10 p-5 '>
-                    <h className='text-3xl font-bold '> Health Tips </h>
+                    <h className='text-3xl font-bold '> Health Blogs </h>
                     <p className='text-[17px]'> Understanding and applying these health tips can lead to increased energy, better mood, and overall enhanced well-being. <br /> By adopting these habits, you can enjoy a more vibrant and active life</p>
                 </div>
 
