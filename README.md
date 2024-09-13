@@ -50,3 +50,5 @@
 3. - [@Swiper-slider](https://swiperjs.com/)
 4. - [@React-spiner](https://www.davidhu.io/react-spinners)
 5. - [@Tailwindcss-buttons](https://devdojo.com/tailwindcss/buttons)
+6. - [@Awesome Animated Website Background](https://codeconvey.com/animated-website-background-with-html5)
+7. - [@Keen Slider](https://keen-slider.io)
