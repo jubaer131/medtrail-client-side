@@ -8,7 +8,7 @@
 * Primary Goal: Manage and maintain medical camps efficiently.
 * Secondary Goals: Provide a centralized platform for scheduling camps, managing medical resources, and reporting on camp activities.
 
-  [Live site](https://medicalcamp-131.netlify.app)
+  [Live site](https://medtrailmedicalcamp31.netlify.app)
 
   [Client repository](https://github.com/jubaer131/medtrail-client-side.git)
 
