@@ -52,7 +52,7 @@ const AvailableCamp = () => {
                 <div >
                     <Navbar></Navbar>
                 </div>
-                <div className='w-full  bg-emerald-100 p-8  lg:h-[620px]  ' style={{
+                <div className='lg:w-[100%]  bg-emerald-100 p-8  lg:h-[620px]  ' style={{
                     backgroundImage: "url('https://i.ibb.co.com/sy9NRxf/forest-trail-sign-2021-08-29-21-03-11-utc.jpg')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
@@ -107,7 +107,7 @@ const AvailableCamp = () => {
 
                             <span className="flex items-center gap-2 relative"><BiLogOutCircle className="text-xl"></BiLogOutCircle> Change Columns</span>
                         </button>
-                        {/* <button onClick={showTwoColumns} className='btn bg-emerald-500 text-white'>Change Columns</button> */}
+
                     </div>
                     <div className={`grid grid-cols-1 md:my-16 gap-5 md:grid-cols-${columns}`}>
                         {availablecamp.map(camp => (

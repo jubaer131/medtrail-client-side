@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Component/Navbar';
+import { Helmet } from 'react-helmet';
 
 const AboutUs = () => {
     return (
         <>
+            <Helmet>
+                <title>About us</title>
+            </Helmet>
             <div>
                 <Navbar></Navbar>
             </div>

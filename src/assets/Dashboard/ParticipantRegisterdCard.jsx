@@ -60,7 +60,7 @@ const ParticipantRegisterdCard = ({ registercamp, refetch }) => {
                 </td>
                 {/* payment setap */}
                 <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
-                    {PaymentStatus === 'Pay' ? <Link to={`/dashboard/payment/${_id}`}><button className="text-yellow-500 btn bg-gray-50 rounded-full">Pay</button></Link> : <button className="btn rounded-full bg-gray-50 text-green-500">Paid</button>
+                    {PaymentStatus === 'Pay' ? <Link to={`/dashboard/payment/${_id}`}><button className="text-yellow-500 btn mask mask-hexagon bg-gray-50 rounded-full">Pay</button></Link> : <button className="btn mask mask-hexagon rounded-full bg-gray-50 text-green-500">Paid</button>
 
 
                     }
@@ -71,7 +71,7 @@ const ParticipantRegisterdCard = ({ registercamp, refetch }) => {
                 </td>
                 <td className='px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap'>
                     {
-                        PaymentStatus === 'paid' && confirmationStatus === 'Confirmed' ? <button className="btn bg-gray-50 rounded-full"><RiDeleteBin5Line className="text-xl text-red-400"></RiDeleteBin5Line></button> : <button onClick={() => handleDeleteRegistation(_id)} className="btn bg-gray-50 rounded-full"><RiDeleteBin5Line className="text-xl text-green-400"></RiDeleteBin5Line></button>
+                        PaymentStatus === 'paid' && confirmationStatus === 'Confirmed' ? <button className="btn  mask mask-parallelogram bg-gray-50 rounded-full"><RiDeleteBin5Line className="text-xl text-red-400"></RiDeleteBin5Line></button> : <button onClick={() => handleDeleteRegistation(_id)} className="btn  mask mask-parallelogram bg-gray-50 rounded-full"><RiDeleteBin5Line className="text-xl text-green-400"></RiDeleteBin5Line></button>
 
                     }
                 </td>
