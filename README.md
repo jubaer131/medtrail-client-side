@@ -14,6 +14,10 @@
 
   [Server repository](https://github.com/jubaer131/medtrail-server-side.git)
 
+# Admin Access : 
+  * Email : jubaer131@gmail.com
+  * Password : 123456tT@
+
 # Key Features:
 
 *  1: Manage and maintain medical camps efficiently.
